@@ -14,9 +14,9 @@ public class FluidRegistry {
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, GenesisMod.MODID);
 
     //fuck
-    //public static final RegistryObject<BloodFluid.Flowing> FLOWING_BLOOD = FLUIDS.register("flowing_blood", () -> new BloodFluid.Flowing(FluidProperties.BLOOD_PROPERTIES));
-    //public static final RegistryObject<BloodFluid.Source> BLOOD_SOURCE = FLUIDS.register("blood_source", () -> new BloodFluid.Source(FluidProperties.BLOOD_PROPERTIES) );
-    public static final RegistryObject<ForgeFlowingFluid.Flowing> FLOWING_BLOOD = FLUIDS.register("flowing_blood", () -> new ForgeFlowingFluid.Flowing(FluidProperties.BLOOD_PROPERTIES));
-    public static final RegistryObject<ForgeFlowingFluid.Source> BLOOD_SOURCE = FLUIDS.register("blood_source", () -> new ForgeFlowingFluid.Source(FluidProperties.BLOOD_PROPERTIES) );
+    public static final RegistryObject<BloodFluid.Flowing> FLOWING_BLOOD = FLUIDS.register("flowing_blood", () -> new BloodFluid.Flowing(FluidProperties.BLOOD_PROPERTIES));
+    public static final RegistryObject<BloodFluid.Source> BLOOD_SOURCE = FLUIDS.register("blood_source", () -> new BloodFluid.Source(FluidProperties.BLOOD_PROPERTIES) );
+    //public static final RegistryObject<ForgeFlowingFluid.Flowing> FLOWING_BLOOD = FLUIDS.register("flowing_blood", () -> new ForgeFlowingFluid.Flowing(FluidProperties.BLOOD_PROPERTIES));
+    //public static final RegistryObject<ForgeFlowingFluid.Source> BLOOD_SOURCE = FLUIDS.register("blood_source", () -> new ForgeFlowingFluid.Source(FluidProperties.BLOOD_PROPERTIES) );
 
 }
