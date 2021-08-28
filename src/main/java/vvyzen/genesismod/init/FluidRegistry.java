@@ -1,4 +1,4 @@
-package vvyzen.genesismod.init;
+/*package vvyzen.genesismod.init;
 
 import net.minecraft.world.level.material.*;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
@@ -19,4 +19,4 @@ public class FluidRegistry {
     //public static final RegistryObject<ForgeFlowingFluid.Flowing> FLOWING_BLOOD = FLUIDS.register("flowing_blood", () -> new ForgeFlowingFluid.Flowing(FluidProperties.BLOOD_PROPERTIES));
     //public static final RegistryObject<ForgeFlowingFluid.Source> BLOOD_SOURCE = FLUIDS.register("blood_source", () -> new ForgeFlowingFluid.Source(FluidProperties.BLOOD_PROPERTIES) );
 
-}
+}*/
