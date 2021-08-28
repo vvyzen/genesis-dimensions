@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "snowy=false": [
+      {
+        "model": "ssvrfi:block/sulphuric_grass"
+      },
+      {
+        "model": "ssvrfi:block/sulphuric_grass",
+        "y": 90
+      },
+      {
+        "model": "ssvrfi:block/sulphuric_grass",
+        "y": 180
+      },
+      {
+        "model": "ssvrfi:block/sulphuric_grass",
+        "y": 270
+      }
+    ],
+	    "snowy=true": {
+      "model": "ssvrfi:block/sulphuric_grass_snow"
+    }
+  }
+}

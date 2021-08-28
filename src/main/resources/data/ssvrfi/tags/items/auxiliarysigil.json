@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "ssvrfi:auxiliary_sigil_haste",
+    "ssvrfi:auxiliary_sigil_strength",
+    "ssvrfi:auxiliary_sigil_resistance"
+  ]
+}

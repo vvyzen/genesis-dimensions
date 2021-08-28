@@ -1,0 +1,14 @@
+{
+  "config": {
+    "top_material": {
+      "Name": "ssvrfi:moonstone"
+    },
+    "under_material": {
+      "Name": "ssvrfi:moonstone"
+    },
+    "underwater_material": {
+      "Name": "ssvrfi:moonstone"
+    }
+  },
+  "type": "minecraft:default"
+}

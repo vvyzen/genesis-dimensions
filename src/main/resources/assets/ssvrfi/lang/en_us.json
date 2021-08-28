@@ -1,0 +1,94 @@
+{
+  "item.ssvrfi.lead_ingot": "Lead Ingot",
+  "item.ssvrfi.raw_pyrite": "Raw Pyrite",
+  "item.ssvrfi.raw_iridium": "Raw Iridium",
+
+  "item.ssvrfi.pyrite_ingot": "Pyrite Ingot",
+  "item.ssvrfi.iridium_ingot": "Iridium Ingot",
+  "item.ssvrfi.black_diamond": "Black Diamond",
+  "item.ssvrfi.abyssalite": "Abyssalite",
+  "item.ssvrfi.abyssal_fragment": "Abyssal Fragment",
+
+  "item.ssvrfi.soul_tear": "Soul Tear",
+  "item.ssvrfi.ivory": "Ivory",
+  "item.ssvrfi.sun_shard": "Sun Shard",
+  "item.ssvrfi.sun_stone": "Sun Stone",
+
+  "item.ssvrfi.ivory_apple": "Ivory Apple",
+
+  "item.ssvrfi.end_essence": "§5End Essence",
+  "item.ssvrfi.overworld_essence": "§aOverworld Essence",
+  "item.ssvrfi.nether_essence": "§4Nether Essence",
+  "item.ssvrfi.eden_essence": "§cEden Essence",
+  "item.ssvrfi.otherworld_essence": "§7Otherworld Essence",
+  "item.ssvrfi.abyssal_essence": "§1Abyssal Essence",
+
+  "item.ssvrfi.world_shatterer": "§lWorld Shatterer",
+  "item.ssvrfi.world_shatterer_shovel": "§lWorld Shatterer",
+
+  "item.ssvrfi.pyrite_sword": "Pyrite Sword",
+  "item.ssvrfi.pyrite_pickaxe": "Pyrite Pickaxe",
+  "item.ssvrfi.pyrite_shovel": "Pyrite Shovel",
+  "item.ssvrfi.pyrite_axe": "Pyrite Axe",
+  "item.ssvrfi.pyrite_hoe": "Pyrite Hoe",
+
+  "item.ssvrfi.iridium_sword": "Iridium Sword",
+  "item.ssvrfi.iridium_pickaxe": "Iridium Pickaxe",
+  "item.ssvrfi.iridium_shovel": "Iridium Shovel",
+  "item.ssvrfi.iridium_axe": "Iridium Axe",
+  "item.ssvrfi.iridium_hoe": "Iridium Hoe",
+
+  "item.ssvrfi.black_diamond_sword": "Black Diamond Sword",
+  "item.ssvrfi.black_diamond_pickaxe": "Black Diamond Pickaxe",
+  "item.ssvrfi.black_diamond_shovel": "Black Diamond Shovel",
+  "item.ssvrfi.black_diamond_axe": "Black Diamond Axe",
+  "item.ssvrfi.black_diamond_hoe": "Black Diamond Hoe",
+
+  "item.ssvrfi.abyssalite_sword": "Abyssalite Sword",
+  "item.ssvrfi.abyssalite_pickaxe": "Abyssalite Pickaxe",
+  "item.ssvrfi.abyssalite_shovel": "Abyssalite Shovel",
+  "item.ssvrfi.abyssalite_axe": "Abyssalite Axe",
+  "item.ssvrfi.abyssalite_hoe": "Abyssalite Hoe",
+
+  "item.ssvrfi.empty_sigil": "Empty Abyssalite Sigil",
+  "item.ssvrfi.protection_sigil": "Abyssal Protection Sigil",
+  "item.ssvrfi.speed_sigil": "Abyssal Speed Sigil",
+  "item.ssvrfi.levitation_sigil": "Abyssal Levitation Sigil",
+  "item.ssvrfi.invisibility_sigil": "Abyssal Invisibility Sigil",
+  "item.ssvrfi.empty_sigil_weak": "Empty Black Diamond Sigil",
+  "item.ssvrfi.protection_sigil_weak": "Carbon Protection Sigil",
+  "item.ssvrfi.speed_sigil_weak": "Carbon Speed Sigil",
+  "item.ssvrfi.auxiliary_sigil_empty": "Empty Auxiliary Sigil",
+  "item.ssvrfi.auxiliary_sigil_haste": "Haste Auxiliary Sigil",
+  "item.ssvrfi.auxiliary_sigil_resistance": "Resistance Auxiliary Sigil",
+  "item.ssvrfi.auxiliary_sigil_strength": "Strength Auxiliary Sigil",
+
+
+  "block.ssvrfi.moonstone": "Moonstone",
+  "block.ssvrfi.slate": "Slate",
+  "block.ssvrfi.brimstone": "Brimstone",
+  "block.ssvrfi.scoria": "Scoria",
+  "block.ssvrfi.core_bedrock": "Core Bedrock",
+  "block.ssvrfi.sulphuric_soil": "Sulphuric Soil",
+  "block.ssvrfi.sulphuric_grass": "Sulphuric Grass",
+  "block.ssvrfi.ash": "Ash",
+  "block.ssvrfi.soot": "Soot",
+  "block.ssvrfi.red_moss": "Red Moss",
+  "block.ssvrfi.mossy_skystone": "Mossy Skystone",
+  "block.ssvrfi.skystone": "Skystone",
+  "block.ssvrfi.mossy_moonstone": "Mossy Moonstone",
+  "block.ssvrfi.ashwood_log": "Ashwood Log",
+  "block.ssvrfi.ashwood_leaves": "Ashwood Leaves",
+  "block.ssvrfi.ashwood_sapling": "Ashwood Sapling",
+
+  "block.ssvrfi.pyrite_ore": "Pyrite Ore",
+  "block.ssvrfi.iridium_ore": "Iridium Ore",
+  "block.ssvrfi.black_diamond_ore": "Black Diamond Ore",
+  "block.ssvrfi.abyssalite_ore": "Abyssalite Ore",
+
+
+
+  "itemGroup.underworld": "§9Otherworld"
+
+
+}

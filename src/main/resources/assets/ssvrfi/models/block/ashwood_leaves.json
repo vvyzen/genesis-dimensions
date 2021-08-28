@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "ssvrfi:block/ashwood_leaves"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "noise": {
+  	    "top_slide": {
+      "target": -2000,
+      "size": 32,
+      "offset": 0
+    },
+    "bottom_slide": {
+      "target": -1000,
+      "size": 48,
+      "offset": 0
+    },
+    "min_y": -64,
+    "height": 448,
+    "density_factor": 0,
+    "density_offset": 0,
+    "size_horizontal": 2,
+    "size_vertical": 1,
+    "simplex_surface_noise": true,
+    "random_density_offset": false,
+    "sampling": {
+      "xz_scale": 2,
+      "y_scale": 1,
+      "xz_factor": 80,
+      "y_factor": 160
+    }
+  },
+  "bedrock_roof_position": -2147483648,
+  "bedrock_floor_position": -2147483648,
+  "sea_level": -2147483648,
+  "min_surface_level": -64,
+  "noise_caves_enabled": true,
+  "noodle_caves_enabled": true,
+  "aquifers_enabled": false,
+  "deepslate_enabled": false,
+  "ore_veins_enabled": false,
+  "disable_mob_generation": false,
+  "structures": {
+    "structures": {
+    }
+  },
+  "default_block": {
+    "Name": "ssvrfi:skystone"
+  },
+  "default_fluid": {
+    "Properties": {
+      "level": "0"
+    },
+    "Name": "minecraft:air"
+  }
+}

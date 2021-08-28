@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "ssvrfi:block/skystone_top",
+    "side": "ssvrfi:block/skystone"
+  }
+}

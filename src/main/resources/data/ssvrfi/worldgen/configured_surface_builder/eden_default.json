@@ -1,0 +1,14 @@
+{
+  "config": {
+    "top_material": {
+      "Name": "ssvrfi:red_moss"
+    },
+    "under_material": {
+      "Name": "ssvrfi:red_moss"
+    },
+    "underwater_material": {
+      "Name": "ssvrfi:red_moss"
+    }
+  },
+  "type": "minecraft:default"
+}

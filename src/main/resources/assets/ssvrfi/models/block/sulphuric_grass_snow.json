@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "ssvrfi:block/sulphuric_grass_top",
+    "bottom": "ssvrfi:block/sulphuric_soil",
+    "side": "ssvrfi:block/sulphuric_grass_snow",
+    "particle": "ssvrfi:block/sulphuric_soil"
+  }
+}

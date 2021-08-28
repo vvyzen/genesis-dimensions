@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ssvrfi:protection_sigil",
+    "ssvrfi:speed_sigil",
+    "ssvrfi:levitation_sigil",
+    "ssvrfi:invisibility_sigil",
+    "ssvrfi:protection_sigil_weak",
+    "ssvrfi:speed_sigil_weak"
+  ]
+}

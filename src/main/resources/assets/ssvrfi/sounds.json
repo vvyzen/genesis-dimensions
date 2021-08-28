@@ -1,0 +1,22 @@
+{
+  "music.eden": {
+    "sounds": [
+      {
+        "name": "ssvrfi:music/eden_chris",
+        "stream": true
+      },
+	  {
+        "name": "ssvrfi:music/eden_equinoxe",
+        "stream": true
+      },
+	  {
+        "name": "ssvrfi:music/eden_ki",
+        "stream": true
+      },
+	  {
+        "name": "ssvrfi:music/eden_kyoto",
+        "stream": true
+      }
+    ]
+  }
+}

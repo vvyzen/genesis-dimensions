@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "ssvrfi:block/brimstone_top",
+    "side": "ssvrfi:block/brimstone"
+  }
+}

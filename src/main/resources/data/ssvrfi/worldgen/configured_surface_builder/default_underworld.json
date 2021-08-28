@@ -1,0 +1,14 @@
+{
+  "config": {
+    "top_material": {
+      "Name": "ssvrfi:slate"
+    },
+    "under_material": {
+      "Name": "ssvrfi:slate"
+    },
+    "underwater_material": {
+      "Name": "ssvrfi:slate"
+    }
+  },
+  "type": "minecraft:default"
+}

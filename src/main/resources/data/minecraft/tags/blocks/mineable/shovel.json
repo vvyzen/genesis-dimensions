@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+	"ssvrfi:sulphuric_soil",
+	"ssvrfi:sulphuric_grass",
+	"ssvrfi:red_moss",
+    "ssvrfi:ash",
+    "ssvrfi:soot"
+  ]
+}

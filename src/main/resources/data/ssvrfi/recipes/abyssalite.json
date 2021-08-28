@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    "AsA",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "ssvrfi:abyssal_fragment"
+    },
+    "s": {
+      "item": "ssvrfi:soul_tear"
+    }
+  },
+  "result": {
+    "item": "ssvrfi:abyssalite",
+    "count": 1
+  }
+}

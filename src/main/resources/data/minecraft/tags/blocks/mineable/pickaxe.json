@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "ssvrfi:moonstone",
+	"ssvrfi:scoria",
+	"ssvrfi:slate",
+	"ssvrfi:core_bedrock",
+	"ssvrfi:mossy_skystone",
+	"ssvrfi:skystone",
+	"ssvrfi:pyrite_ore",
+	"ssvrfi:iridium_ore",
+	"ssvrfi:black_diamond_ore",
+	"ssvrfi:abyssalite_ore",
+	"ssvrfi:brimstone"
+
+
+  ]
+}

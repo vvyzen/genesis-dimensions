@@ -1,0 +1,68 @@
+{
+  "depth": -1.9,
+  "scale": 0.1,
+  "precipitation": "rain",
+  "temperature_modifier": "none",
+  "temperature": 0.2,
+  "downfall": 0.6,
+  "category": "ocean",
+  "effects": {
+    "sky_color": 11725532,
+    "fog_color": 10473403,
+    "grass_color": 11783622,
+    "foliage_color": 11783622,
+    "water_color": 6922154,
+    "water_fog_color": 2440519,
+      "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    }
+  },
+  "surface_builder": "ssvrfi:default_surface",
+  "carvers": {
+    "air": [
+      "minecraft:ocean_cave",
+      "minecraft:canyon"
+    ],
+    "liquid": [
+      "minecraft:underwater_canyon",
+      "minecraft:underwater_cave"
+    ]
+  },
+  "features": [
+    [],
+    ["minecraft:lake_water", "minecraft:lake_lava"],
+    [],
+    [],
+    [],
+    [],
+    ["ssvrfi:ore_pyrite","ssvrfi:ore_iridium","ssvrfi:ore_carbon"],
+	[],
+    [
+	],
+    [
+	"minecraft:freeze_top_layer"
+	]
+  ],
+  "starts": [
+  ],
+  "spawners": {
+    "monster": [
+    ],
+    "creature": [
+    ],
+    "ambient": [
+    ],
+    "water_creature": [
+    ],
+    "water_ambient": [
+    ],
+    "misc": [
+    ]
+  },
+  "player_spawn_friendly": false,
+  "spawn_costs": {
+  }
+}
