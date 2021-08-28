@@ -1,4 +1,4 @@
-package vvyzen.genesismod.fluids;
+/*package vvyzen.genesismod.fluids;
 
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -75,4 +75,4 @@ public class BloodFluid extends ForgeFlowingFluid {
             return true;
         }
     }
-}
+}*/
