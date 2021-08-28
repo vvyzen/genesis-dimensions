@@ -19,7 +19,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vvyzen.genesismod.init.BlockRegistry;
-import vvyzen.genesismod.init.FluidRegistry;
+//import vvyzen.genesismod.init.FluidRegistry;
 import vvyzen.genesismod.init.ItemRegistry;
 import vvyzen.genesismod.util.tooltiers.*;
 
@@ -45,7 +45,7 @@ public class GenesisMod
 
         ItemRegistry.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         BlockRegistry.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        FluidRegistry.FLUIDS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        //FluidRegistry.FLUIDS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         TierSorter.PYRITE_TIER = TierSortingRegistry.registerTier(new PyriteToolTier(), new ResourceLocation("ssvrfi", "pyrite"), TierSorter.pyrite_after, TierSorter.pyrite_before);
         TierSorter.IRIDIUM_TIER = TierSortingRegistry.registerTier(new IridiumToolTier(), new ResourceLocation("ssvrfi", "iridium"), TierSorter.iridium_after, TierSorter.iridium_before);
