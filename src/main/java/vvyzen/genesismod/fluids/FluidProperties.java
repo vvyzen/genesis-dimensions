@@ -11,5 +11,5 @@ import vvyzen.genesismod.init.FluidRegistry;
 public class FluidProperties {
 
     public static final ForgeFlowingFluid.Properties BLOOD_PROPERTIES = (new ForgeFlowingFluid.Properties(FluidRegistry.BLOOD_SOURCE, FluidRegistry.FLOWING_BLOOD,
-            FluidAttributes.builder(new ResourceLocation("ssvrfi", "block/blood_still"), new ResourceLocation("ssvrfi", "block/blood_flowing")).viscosity(1600)).block(BlockRegistry.BLOOD).tickRate(10));
+            FluidAttributes.builder(new ResourceLocation("ssvrfi", "block/blood_still"), new ResourceLocation("ssvrfi", "block/blood_flowing")).viscosity(1600)).tickRate(10));
 }

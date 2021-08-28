@@ -23,6 +23,11 @@ public class BloodFluid extends ForgeFlowingFluid {
         return FluidRegistry.BLOOD_SOURCE.get();
     }
 
+
+    public Block getBlock(){
+        return BlockRegistry.BLOOD.get();
+    }
+
     @Override
     public boolean isSource(FluidState p_76140_) {
         return false;
