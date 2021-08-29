@@ -17,10 +17,6 @@ import java.util.Collections;
 public class OtherworldSkyRenderer implements ISkyRenderHandler {
     private static final ResourceLocation SUN_LOCATION = new ResourceLocation("ssvrfi","textures/environment/theia_sun.png");
 
-    @Nullable
-    private VertexBuffer darkBuffer;
-    public static final PerlinNoise perlinNoiseGenerator = new PerlinNoise((RandomSource)new SimpleRandomSource(8544L), Collections.singletonList(Integer.valueOf(-4)));
-
     public OtherworldSkyRenderer(){
     }
 

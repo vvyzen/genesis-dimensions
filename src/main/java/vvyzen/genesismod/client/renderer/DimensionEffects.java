@@ -13,11 +13,11 @@ import javax.annotation.Nullable;
 public abstract class DimensionEffects {
 
     @OnlyIn(Dist.CLIENT)
-    public static class OtherworldEffects extends DimensionSpecialEffects {
+    public static class OtherworldRenderInfo extends DimensionSpecialEffects {
         private ISkyRenderHandler skyRenderer;
         public static final int CLOUD_LEVEL = 192;
 
-        public OtherworldEffects() {
+        public OtherworldRenderInfo() {
             super(192.0F, true, DimensionSpecialEffects.SkyType.NORMAL, false, false);
         }
 
