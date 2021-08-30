@@ -11,8 +11,13 @@ import vvyzen.genesismod.client.renderer.OtherworldRenderInfo;
 @OnlyIn(Dist.CLIENT)
 @Mod.EventBusSubscriber(modid = "ssvrfi", value = {Dist.CLIENT}, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ClientRegistrar {
-    public static void setup(FMLCommonSetupEvent event){
+
+    public static void blockRenderLayer(){
+
 
         DimensionSpecialEffects.EFFECTS.put(new ResourceLocation("ssvrfi", "otherworld"), new OtherworldRenderInfo());
+    }
+    public static void setup(FMLCommonSetupEvent event){
+
     }
 }
