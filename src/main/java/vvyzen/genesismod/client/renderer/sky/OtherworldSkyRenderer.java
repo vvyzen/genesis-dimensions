@@ -1,22 +1,42 @@
 package vvyzen.genesismod.client.renderer.sky;
 
 import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import com.mojang.math.Matrix4f;
 import com.mojang.math.Vector3f;
+import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
+import net.minecraft.Util;
+import net.minecraft.client.CloudStatus;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.Option;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.culling.Frustum;
+import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureManager;
+import net.minecraft.client.resources.model.ModelBakery;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.BlockDestructionProgress;
 import net.minecraft.util.Mth;
+import net.minecraft.util.profiling.ProfilerFiller;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.ISkyRenderHandler;
 
 import javax.annotation.Nullable;
+import java.util.List;
+import java.util.SortedSet;
 
-public class OtherworldSkyRenderer implements ISkyRenderHandler {
+public class OtherworldSkyRenderer implements ISkyRenderHandler{
     private static final ResourceLocation SUN_LOCATION = new ResourceLocation("ssvrfi", "textures/environment/theia_sun.png");
     private static final ResourceLocation MOON_LOCATION = new ResourceLocation("ssvrfi","textures/environment/accursed_moon.png");
     private ClientLevel level;
@@ -32,19 +52,13 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler {
     private VertexBuffer darkBuffer;
 
 
-    //p_181410_ is
-    //p_181410_ is
-    //p_181410_ is
-    //p_181413_ is YOUR MOTHER
-    @Override
-    public void render(int ticks, float p_181412_, PoseStack p_181410_, ClientLevel world, Minecraft p_181413_) {
-            p_181413_.run();
-            net.minecraftforge.client.ISkyRenderHandler renderHandler = level.effects().getSkyRenderHandler();
-        Matrix4f p_181411_ = new Matrix4f();
-            if (renderHandler != null) {
-                renderHandler.render(ticks, p_181412_, p_181410_, level, minecraft);
-                return;
-            }
+    public void OtherworldSkyRenderer(PoseStack p_181410_, Matrix4f p_181411_, float p_181412_, Minecraft p_181413_) {
+        p_181413_.run();
+        net.minecraftforge.client.ISkyRenderHandler renderHandler = level.effects().getSkyRenderHandler();
+        if (renderHandler != null) {
+            renderHandler.render(ticks, p_181412_, p_181410_, level, minecraft);
+            return;
+        }
             if (this.minecraft.level.effects().skyType() == DimensionSpecialEffects.SkyType.NORMAL) {
                 RenderSystem.disableTexture();
                 Vec3 vec3 = this.level.getSkyColor(this.minecraft.gameRenderer.getMainCamera().getPosition(), p_181412_);
@@ -59,7 +73,7 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler {
                 this.skyBuffer.drawWithShader(p_181410_.last().pose(), p_181411_, shaderinstance);
                 RenderSystem.enableBlend();
                 RenderSystem.defaultBlendFunc();
-                float[] afloat = this.level.effects().getSunriseColor(this.level.getTimeOfDay(p_181412_), p_181412_);
+                float[] afloat = this.level.effects().getSunriseColor(this.level.getTimeOfDay(ticks), p_181412_);
                 if (afloat != null) {
                     RenderSystem.setShader(GameRenderer::getPositionColorShader);
                     RenderSystem.disableTexture();
@@ -129,7 +143,7 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler {
                     RenderSystem.setShaderColor(f10, f10, f10, f10);
                     FogRenderer.setupNoFog();
                     this.starBuffer.drawWithShader(p_181410_.last().pose(), p_181411_, GameRenderer.getPositionShader());
-                    p_181413_.run();
+                    minecraft.run();
                 }
 
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
@@ -157,6 +171,8 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler {
         }
 
 
+    @Override
+    public void render(int ticks, float partialTicks, PoseStack matrixStack, ClientLevel world, Minecraft mc) {
 
-
+    }
 }

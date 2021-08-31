@@ -1,0 +1,41 @@
+{
+  "config": {
+    "feature": {
+      "config": {
+        "state": {
+          "Name": "ssvrfi:soot"
+        },
+        "radius": {
+          "type": "minecraft:uniform",
+          "value": {
+            "min_inclusive": 2,
+            "max_inclusive": 5
+          }
+        },
+        "half_height": 2,
+        "targets": [
+          {
+            "Name": "ssvrfi:ash"
+          }
+        ]
+      },
+      "type": "minecraft:disk"
+    },
+    "decorator": {
+      "config": {
+        "outer": {
+          "config": {},
+          "type": "minecraft:square"
+        },
+        "inner": {
+          "config": {
+            "heightmap": "OCEAN_FLOOR_WG"
+          },
+          "type": "minecraft:heightmap"
+        }
+      },
+      "type": "minecraft:decorated"
+    }
+  },
+  "type": "minecraft:decorated"
+}

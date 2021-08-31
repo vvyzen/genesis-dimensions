@@ -29,7 +29,7 @@ public class OtherworldRenderInfo extends DimensionSpecialEffects {
     @Nullable
     public ISkyRenderHandler getSkyRenderHandler() {
         if (this.skyRenderer == null)
-            this.skyRenderer = (ISkyRenderHandler)new OtherworldSkyRenderer();
+            this.skyRenderer = (ISkyRenderHandler) new OtherworldSkyRenderer();
         return this.skyRenderer;
     }
 }
