@@ -2,9 +2,9 @@
     "textures": {
         "particle": "ssvrfi:block/sulphuric_soil",
         "bottom": "ssvrfi:block/sulphuric_soil",
-        "top": "block/grass_block_top",
+        "top": "ssvrfi:block/sulphuric_grass_top",
         "side": "ssvrfi:block/sulphuric_soil",
-        "overlay": "block/grass_block_side_overlay"
+        "overlay": "ssvrfi:block/sulphuric_grass_side_overlay"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],
