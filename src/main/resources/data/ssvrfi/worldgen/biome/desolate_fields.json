@@ -17,7 +17,7 @@
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
-      "offset": 2.0
+      "offset": 2
     }
   },
   "surface_builder": "ssvrfi:default_surface",
@@ -36,7 +36,7 @@
     [],
     ["ssvrfi:ore_pyrite","ssvrfi:ore_iridium","ssvrfi:ore_carbon"],
 	[],
-    ["minecraft:patch_grass_plain", "minecraft:plain_vegetation"],
+    ["minecraft:patch_grass_plain", "ssvrfi:fields_vegetation"],
     []
   ],
   "starts": [

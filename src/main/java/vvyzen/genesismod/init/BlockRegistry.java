@@ -10,6 +10,7 @@ import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import vvyzen.genesismod.GenesisMod;
+import vvyzen.genesismod.world.level.grower.AshTreeGrower;
 //import vvyzen.genesismod.fluids.LiquidBlockFixed;
 
 public class BlockRegistry {
@@ -32,7 +33,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> MOSSY_MOONSTONE = BLOCKS.register("mossy_moonstone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(4.0F, 6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<RotatedPillarBlock> ASHWOOD_LOG = BLOCKS.register("ashwood_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).sound(SoundType.WOOD).strength(2.0f)));
     public static final RegistryObject<LeavesBlock> ASHWOOD_LEAVES = BLOCKS.register("ashwood_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
-    //public static final RegistryObject<SaplingBlock> ASHWOOD_SAPLING = BLOCKS.register("ashwood_sapling", () -> new SaplingBlock(new AshTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+    public static final RegistryObject<SaplingBlock> ASHWOOD_SAPLING = BLOCKS.register("ashwood_sapling", () -> new SaplingBlock(new AshTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
 
     public static final RegistryObject<OreBlock> PYRITE_ORE = BLOCKS.register("pyrite_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
     public static final RegistryObject<OreBlock> IRIDIUM_ORE = BLOCKS.register("iridium_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));

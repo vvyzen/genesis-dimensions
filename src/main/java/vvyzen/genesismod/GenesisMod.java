@@ -13,6 +13,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -76,17 +77,19 @@ public class GenesisMod
         BlockColors blockColors = Minecraft.getInstance().getBlockColors();
         ItemColors itemColors = Minecraft.getInstance().getItemColors();
 
-        blockColors.register((p_92641_, p_92642_, p_92643_, p_92644_) -> {
-                    return p_92642_ != null && p_92643_ != null ? BiomeColors.getAverageGrassColor(p_92642_, p_92643_) : GrassColor.get(0.5D, 1.0D);
-                }, BlockRegistry.SULPHURIC_GRASS.get());
+        blockColors.register((p_92641_, p_92642_, p_92643_, p_92644_) -> p_92642_ != null && p_92643_ != null ? BiomeColors.getAverageGrassColor(p_92642_, p_92643_) : GrassColor.get(0.5D, 1.0D), BlockRegistry.SULPHURIC_GRASS.get());
+        blockColors.register((p_92636_, p_92637_, p_92638_, p_92639_) -> FoliageColor.getEvergreenColor(), BlockRegistry.ASHWOOD_LEAVES.get());
 
         itemColors.register((p_92687_, p_92688_) -> {
                     BlockState blockstate = ((BlockItem)p_92687_.getItem()).getBlock().defaultBlockState();
-                    return BlockColors.createDefault().getColor(Blocks.GRASS_BLOCK.defaultBlockState(), (BlockAndTintGetter) null, (BlockPos) null, p_92688_);
+                    return BlockColors.createDefault().getColor(Blocks.GRASS_BLOCK.defaultBlockState(), null, null, p_92688_);
                 }, ItemRegistry.SULPHURIC_GRASS.get());
 
+
         DimensionSpecialEffects.EFFECTS.put(new ResourceLocation("ssvrfi", "otherworld"), new OtherworldRenderInfo());
-        setRenderLayer((Block) BlockRegistry.SULPHURIC_GRASS.get(), RenderType.cutout());
+        setRenderLayer(BlockRegistry.SULPHURIC_GRASS.get(), RenderType.cutout());
+        setRenderLayer(BlockRegistry.ASHWOOD_LEAVES.get(), RenderType.translucent());
+
 
         LOGGER.info("WHAT UP MOTHERFUCKER");
     }
