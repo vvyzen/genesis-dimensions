@@ -10,7 +10,9 @@ import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import vvyzen.genesismod.GenesisMod;
+import vvyzen.genesismod.blocks.RedundantGrassBlock;
 import vvyzen.genesismod.world.level.grower.AshTreeGrower;
+import vvyzen.genesismod.world.level.grower.DeadTreeGrower;
 //import vvyzen.genesismod.fluids.LiquidBlockFixed;
 
 public class BlockRegistry {
@@ -24,7 +26,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> BRIMSTONE = BLOCKS.register("brimstone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(50.0F, 1200.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> CORE_BEDROCK = BLOCKS.register("core_bedrock", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(100000.0F, 3600000.0F).noDrops()));
     public static final RegistryObject<Block> SULPHURIC_SOIL = BLOCKS.register("sulphuric_soil", () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).sound(SoundType.GRAVEL).strength(0.5f)));
-    public static final RegistryObject<Block> SULPHURIC_GRASS = BLOCKS.register("sulphuric_grass", () -> new GrassBlock(BlockBehaviour.Properties.of(Material.GRASS).randomTicks().sound(SoundType.GRASS).strength(0.6f)));
+    public static final RegistryObject<Block> SULPHURIC_GRASS = BLOCKS.register("sulphuric_grass", () -> new RedundantGrassBlock(BlockBehaviour.Properties.of(Material.GRASS).randomTicks().sound(SoundType.GRASS).strength(0.6f)));
     public static final RegistryObject<SandBlock> ASH = BLOCKS.register("ash", () -> new SandBlock(11903907, BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_LIGHT_GRAY).strength(0.5F).sound(SoundType.SAND)));
     public static final RegistryObject<SandBlock> SOOT = BLOCKS.register("soot", () -> new SandBlock(1907740, BlockBehaviour.Properties.of(Material.SAND, MaterialColor.COLOR_BLACK).strength(0.5F).sound(SoundType.SAND)));
     public static final RegistryObject<Block> RED_MOSS = BLOCKS.register("red_moss", () -> new Block(BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_RED).sound(SoundType.GRASS).strength(0.5f)));
@@ -34,6 +36,9 @@ public class BlockRegistry {
     public static final RegistryObject<RotatedPillarBlock> ASHWOOD_LOG = BLOCKS.register("ashwood_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).sound(SoundType.WOOD).strength(2.0f)));
     public static final RegistryObject<LeavesBlock> ASHWOOD_LEAVES = BLOCKS.register("ashwood_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<SaplingBlock> ASHWOOD_SAPLING = BLOCKS.register("ashwood_sapling", () -> new SaplingBlock(new AshTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+    public static final RegistryObject<RotatedPillarBlock> DEAD_LOG = BLOCKS.register("dead_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).sound(SoundType.WOOD).strength(2.0f)));
+    public static final RegistryObject<LeavesBlock> DEAD_LEAVES = BLOCKS.register("dead_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<SaplingBlock> DEAD_SAPLING = BLOCKS.register("dead_sapling", () -> new SaplingBlock(new DeadTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
 
     public static final RegistryObject<OreBlock> PYRITE_ORE = BLOCKS.register("pyrite_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
     public static final RegistryObject<OreBlock> IRIDIUM_ORE = BLOCKS.register("iridium_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
