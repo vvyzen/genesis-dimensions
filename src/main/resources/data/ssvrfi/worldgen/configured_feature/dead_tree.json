@@ -1,0 +1,61 @@
+{
+  "config": {
+    "decorators": [],
+    "ignore_vines": true,
+    "force_dirt": false,
+    "dirt_provider": {
+      "state": {
+        "Name": "ssvrfi:sulphuric_soil"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "minimum_size": {
+      "limit": 1,
+      "lower_size": 0,
+      "upper_size": 1,
+      "type": "minecraft:two_layers_feature_size"
+    },
+    "foliage_provider": {
+      "state": {
+        "Properties": {
+          "persistent": "false",
+          "distance": "7"
+        },
+        "Name": "ssvrfi:dead_leaves"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "sapling_provider": {
+      "state": {
+        "Properties": {
+          "stage": "0"
+        },
+        "Name": "ssvrfi:dead_sapling"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "foliage_placer": {
+      "radius": 3,
+      "offset": 0,
+      "foliage_height": 2,
+      "leaf_placement_attempts": 25,
+      "type": "minecraft:random_spread_foliage_placer"
+    },
+    "trunk_provider": {
+      "state": {
+        "Properties": {
+          "axis": "y"
+        },
+        "Name": "ssvrfi:dead_log"
+      },
+      "type": "minecraft:simple_state_provider"
+    },
+    "trunk_placer": {
+      "base_height": 3,
+      "height_rand_a": 11,
+      "height_rand_b": 0,
+      "type": "minecraft:fancy_trunk_placer"
+    }
+  },
+  "type": "minecraft:tree"
+}

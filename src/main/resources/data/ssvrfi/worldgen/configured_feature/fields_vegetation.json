@@ -7,10 +7,10 @@
             "features": [
               {
                 "feature": "ssvrfi:ashwood",
-                "chance": 0.33333334
+                "chance": 0.122
               }
             ],
-            "default": "ssvrfi:ashwood"
+            "default": "ssvrfi:dead_tree"
           },
           "type": "minecraft:random_selector"
         },

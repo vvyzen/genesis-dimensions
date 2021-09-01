@@ -78,6 +78,7 @@ public class GenesisMod
         ItemColors itemColors = Minecraft.getInstance().getItemColors();
 
         blockColors.register((p_92641_, p_92642_, p_92643_, p_92644_) -> p_92642_ != null && p_92643_ != null ? BiomeColors.getAverageGrassColor(p_92642_, p_92643_) : GrassColor.get(0.5D, 1.0D), BlockRegistry.SULPHURIC_GRASS.get());
+        blockColors.register((p_92641_, p_92642_, p_92643_, p_92644_) -> p_92642_ != null && p_92643_ != null ? BiomeColors.getAverageGrassColor(p_92642_, p_92643_) : GrassColor.get(0.5D, 1.0D), BlockRegistry.CLOVER.get());
         blockColors.register((p_92636_, p_92637_, p_92638_, p_92639_) -> FoliageColor.getEvergreenColor(), BlockRegistry.ASHWOOD_LEAVES.get());
 
         itemColors.register((p_92687_, p_92688_) -> {
@@ -88,6 +89,7 @@ public class GenesisMod
 
         DimensionSpecialEffects.EFFECTS.put(new ResourceLocation("ssvrfi", "otherworld"), new OtherworldRenderInfo());
         setRenderLayer(BlockRegistry.SULPHURIC_GRASS.get(), RenderType.cutout());
+        setRenderLayer(BlockRegistry.CLOVER.get(), RenderType.cutout());
         setRenderLayer(BlockRegistry.ASHWOOD_LEAVES.get(), RenderType.translucent());
 
 

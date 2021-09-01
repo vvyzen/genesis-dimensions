@@ -1,6 +1,8 @@
 package vvyzen.genesismod.init;
 
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.*;
 
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -33,6 +35,9 @@ public class BlockRegistry {
     //public static final RegistryObject<Block> MOSSY_SKYSTONE = BLOCKS.register("mossy_skystone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(4.0F, 6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SKYSTONE = BLOCKS.register("skystone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(4.0F, 6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> MOSSY_MOONSTONE = BLOCKS.register("mossy_moonstone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(4.0F, 6.0F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<BushBlock> CLOVER = BLOCKS.register("clover", () -> new BushBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS)));
+
     public static final RegistryObject<RotatedPillarBlock> ASHWOOD_LOG = BLOCKS.register("ashwood_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).sound(SoundType.WOOD).strength(2.0f)));
     public static final RegistryObject<LeavesBlock> ASHWOOD_LEAVES = BLOCKS.register("ashwood_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<SaplingBlock> ASHWOOD_SAPLING = BLOCKS.register("ashwood_sapling", () -> new SaplingBlock(new AshTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));

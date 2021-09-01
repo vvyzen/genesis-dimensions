@@ -44,9 +44,8 @@ public class FeatureRegistry {
                         new FancyTrunkPlacer(3, 11, 0),
                         new SimpleStateProvider(BlockRegistry.DEAD_LEAVES.get().defaultBlockState()),
                         new SimpleStateProvider(BlockRegistry.DEAD_SAPLING.get().defaultBlockState()),
-                        new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 30),
+                        new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 25),
                         new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).build())));
-
 
     }
 
