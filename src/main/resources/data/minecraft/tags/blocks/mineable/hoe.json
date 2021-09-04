@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "ssvrfi:ashwood_leaves"
+    "ssvrfi:ashwood_leaves",
+    "ssvrfi:dead_leaves",
+    "ssvrfi:eternal_leaves"
   ]
 }

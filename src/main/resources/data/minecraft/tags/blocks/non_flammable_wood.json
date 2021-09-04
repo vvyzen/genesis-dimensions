@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-  "ssvrfi:ashwood_log"
+  "ssvrfi:ashwood_log",
+  "ssvrfi:eternal_log"
+
   ]
 }

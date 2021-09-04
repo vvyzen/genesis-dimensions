@@ -78,12 +78,18 @@
   "block.ssvrfi.mossy_skystone": "Mossy Skystone",
   "block.ssvrfi.skystone": "Skystone",
   "block.ssvrfi.mossy_moonstone": "Mossy Moonstone",
+
+  "block.ssvrfi.clover": "Clover",
+
   "block.ssvrfi.ashwood_log": "Ashwood Log",
   "block.ssvrfi.ashwood_leaves": "Ashwood Leaves",
   "block.ssvrfi.ashwood_sapling": "Ashwood Sapling",
   "block.ssvrfi.dead_log": "Dead Log",
   "block.ssvrfi.dead_leaves": "Dead Leaves",
   "block.ssvrfi.dead_sapling": "Dead Sapling",
+  "block.ssvrfi.eternal_log": "Eternal Log",
+  "block.ssvrfi.eternal_leaves": "Eternal Leaves",
+  "block.ssvrfi.eternal_sapling": "Eternal Sapling",
 
   "block.ssvrfi.pyrite_ore": "Pyrite Ore",
   "block.ssvrfi.iridium_ore": "Iridium Ore",

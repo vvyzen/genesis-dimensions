@@ -13,7 +13,9 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePla
 import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import vvyzen.genesismod.world.level.feature.trunkplacers.EternalTrunkPlacer;
 
 import java.util.OptionalInt;
 
@@ -21,6 +23,7 @@ import java.util.OptionalInt;
 public class FeatureRegistry {
     public static final ConfiguredFeature<TreeConfiguration, ?> ASHWOOD;
     public static final ConfiguredFeature<TreeConfiguration, ?> DEAD_TREE;
+    public static final ConfiguredFeature<TreeConfiguration, ?> ETERNAL_TREE;
 
 
     private static <FC extends FeatureConfiguration> ConfiguredFeature<FC, ?> register(String p_127056_, ConfiguredFeature<FC, ?> p_127057_) {
@@ -45,6 +48,15 @@ public class FeatureRegistry {
                         new SimpleStateProvider(BlockRegistry.DEAD_LEAVES.get().defaultBlockState()),
                         new SimpleStateProvider(BlockRegistry.DEAD_SAPLING.get().defaultBlockState()),
                         new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 25),
+                        new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).build())));
+
+        ETERNAL_TREE = register("eternal_tree", Feature.TREE.configured((
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        new SimpleStateProvider(BlockRegistry.ETERNAL_LOG.get().defaultBlockState()),
+                        new EternalTrunkPlacer(12, 16, 0),
+                        new SimpleStateProvider(BlockRegistry.ETERNAL_LEAVES.get().defaultBlockState()),
+                        new SimpleStateProvider(BlockRegistry.ETERNAL_SAPLING.get().defaultBlockState()),
+                        new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
                         new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).build())));
 
     }

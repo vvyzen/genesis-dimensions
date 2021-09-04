@@ -111,6 +111,9 @@ public class ItemRegistry {
     public static final RegistryObject<BlockItem> DEAD_LOG = ITEMS.register("dead_log", () -> new BlockItemBase(BlockRegistry.DEAD_LOG.get()));
     public static final RegistryObject<BlockItem> DEAD_LEAVES = ITEMS.register("dead_leaves", () -> new BlockItemBase(BlockRegistry.DEAD_LEAVES.get()));
     public static final RegistryObject<BlockItem> DEAD_SAPLING = ITEMS.register("dead_sapling", () -> new BlockItemBase(BlockRegistry.DEAD_SAPLING.get()));
+    public static final RegistryObject<BlockItem> ETERNAL_LOG = ITEMS.register("eternal_log", () -> new BlockItemBase(BlockRegistry.ETERNAL_LOG.get()));
+    public static final RegistryObject<BlockItem> ETERNAL_LEAVES = ITEMS.register("eternal_leaves", () -> new BlockItemBase(BlockRegistry.ETERNAL_LEAVES.get()));
+    public static final RegistryObject<BlockItem> ETERNAL_SAPLING = ITEMS.register("eternal_sapling", () -> new BlockItemBase(BlockRegistry.ETERNAL_SAPLING.get()));
 
     public static final RegistryObject<BlockItem> PYRITE_ORE = ITEMS.register("pyrite_ore", () -> new BlockItemBase(BlockRegistry.PYRITE_ORE.get()));
     public static final RegistryObject<BlockItem> IRIDIUM_ORE = ITEMS.register("iridium_ore", () -> new BlockItemBase(BlockRegistry.IRIDIUM_ORE.get()));

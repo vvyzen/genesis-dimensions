@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ssvrfi:block/eternal_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ssvrfi:block/eternal_log"
+    },
+    "axis=z": {
+      "model": "ssvrfi:block/eternal_log_horizontal",
+      "x": 90
+    }
+  }
+}

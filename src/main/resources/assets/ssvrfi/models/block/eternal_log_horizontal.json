@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "ssvrfi:block/eternal_log_top",
+    "side": "ssvrfi:block/eternal_log"
+  }
+}

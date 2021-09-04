@@ -15,6 +15,7 @@ import vvyzen.genesismod.GenesisMod;
 import vvyzen.genesismod.blocks.RedundantGrassBlock;
 import vvyzen.genesismod.world.level.grower.AshTreeGrower;
 import vvyzen.genesismod.world.level.grower.DeadTreeGrower;
+import vvyzen.genesismod.world.level.grower.EternalTreeGrower;
 //import vvyzen.genesismod.fluids.LiquidBlockFixed;
 
 public class BlockRegistry {
@@ -44,6 +45,9 @@ public class BlockRegistry {
     public static final RegistryObject<RotatedPillarBlock> DEAD_LOG = BLOCKS.register("dead_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).sound(SoundType.WOOD).strength(2.0f)));
     public static final RegistryObject<LeavesBlock> DEAD_LEAVES = BLOCKS.register("dead_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<SaplingBlock> DEAD_SAPLING = BLOCKS.register("dead_sapling", () -> new SaplingBlock(new DeadTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+    public static final RegistryObject<RotatedPillarBlock> ETERNAL_LOG = BLOCKS.register("eternal_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).sound(SoundType.WOOD).strength(2.0f)));
+    public static final RegistryObject<LeavesBlock> ETERNAL_LEAVES = BLOCKS.register("eternal_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<SaplingBlock> ETERNAL_SAPLING = BLOCKS.register("eternal_sapling", () -> new SaplingBlock(new EternalTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
 
     public static final RegistryObject<OreBlock> PYRITE_ORE = BLOCKS.register("pyrite_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
     public static final RegistryObject<OreBlock> IRIDIUM_ORE = BLOCKS.register("iridium_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));

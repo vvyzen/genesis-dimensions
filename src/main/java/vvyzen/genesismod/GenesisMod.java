@@ -1,5 +1,6 @@
 package vvyzen.genesismod;
 
+import com.mojang.serialization.Lifecycle;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColors;
@@ -8,6 +9,11 @@ import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.MappedRegistry;
+import net.minecraft.core.Registry;
+import net.minecraft.core.WritableRegistry;
+import net.minecraft.data.BuiltinRegistries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Tier;
@@ -18,6 +24,10 @@ import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.TierSortingRegistry;
 import net.minecraftforge.event.RegistryEvent;
@@ -29,6 +39,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fmlserverevents.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vvyzen.genesismod.client.renderer.OtherworldRenderInfo;
@@ -40,6 +51,7 @@ import vvyzen.genesismod.util.tooltiers.*;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -49,6 +61,7 @@ public class GenesisMod
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
     public static final String MODID = "ssvrfi";
+
 
     public GenesisMod() {
         // Register the setup method for modloading
@@ -62,6 +75,11 @@ public class GenesisMod
         BlockRegistry.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         //FluidRegistry.FLUIDS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
+
+
+        //private static <FC extends FeatureConfiguration > ConfiguredFeature<FC, ?> register(String p_127056_, ConfiguredFeature<FC, ?> p_127057_) {
+        //    return (ConfiguredFeature) Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, p_127056_, p_127057_);
+        //}
         TierSorter.PYRITE_TIER = TierSortingRegistry.registerTier(new PyriteToolTier(), new ResourceLocation("ssvrfi", "pyrite"), TierSorter.pyrite_after, TierSorter.pyrite_before);
         TierSorter.IRIDIUM_TIER = TierSortingRegistry.registerTier(new IridiumToolTier(), new ResourceLocation("ssvrfi", "iridium"), TierSorter.iridium_after, TierSorter.iridium_before);
         TierSorter.CARBON_TIER = TierSortingRegistry.registerTier(new BlackDiamondToolTier(), new ResourceLocation("ssvrfi", "carbon"), TierSorter.carbon_after, TierSorter.carbon_before);
@@ -77,9 +95,8 @@ public class GenesisMod
         BlockColors blockColors = Minecraft.getInstance().getBlockColors();
         ItemColors itemColors = Minecraft.getInstance().getItemColors();
 
-        blockColors.register((p_92641_, p_92642_, p_92643_, p_92644_) -> p_92642_ != null && p_92643_ != null ? BiomeColors.getAverageGrassColor(p_92642_, p_92643_) : GrassColor.get(0.5D, 1.0D), BlockRegistry.SULPHURIC_GRASS.get());
-        blockColors.register((p_92641_, p_92642_, p_92643_, p_92644_) -> p_92642_ != null && p_92643_ != null ? BiomeColors.getAverageGrassColor(p_92642_, p_92643_) : GrassColor.get(0.5D, 1.0D), BlockRegistry.CLOVER.get());
-        blockColors.register((p_92636_, p_92637_, p_92638_, p_92639_) -> FoliageColor.getEvergreenColor(), BlockRegistry.ASHWOOD_LEAVES.get());
+        blockColors.register((p_92641_, p_92642_, p_92643_, p_92644_) -> p_92642_ != null && p_92643_ != null ? BiomeColors.getAverageGrassColor(p_92642_, p_92643_) : GrassColor.get(0.5D, 1.0D), BlockRegistry.SULPHURIC_GRASS.get(), BlockRegistry.CLOVER.get());
+        blockColors.register((p_92641_, p_92642_, p_92643_, p_92644_) -> p_92642_ != null && p_92643_ != null ? BiomeColors.getAverageFoliageColor(p_92642_, p_92643_) : FoliageColor.get(0.5D, 1.0D), BlockRegistry.ASHWOOD_LEAVES.get(), BlockRegistry.ETERNAL_LEAVES.get());
 
         itemColors.register((p_92687_, p_92688_) -> {
                     BlockState blockstate = ((BlockItem)p_92687_.getItem()).getBlock().defaultBlockState();
@@ -131,4 +148,7 @@ public class GenesisMod
         Objects.requireNonNull(type);
         ItemBlockRenderTypes.setRenderLayer(block, type::equals);
     }
+
+
+
 }

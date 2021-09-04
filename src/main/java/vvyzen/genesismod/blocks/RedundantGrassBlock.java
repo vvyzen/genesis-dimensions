@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -29,7 +30,7 @@ public class RedundantGrassBlock extends RedundantSnowyDirtBlock implements Bone
 
     public void performBonemeal(ServerLevel p_53687_, Random p_53688_, BlockPos p_53689_, BlockState p_53690_) {
         BlockPos blockpos = p_53689_.above();
-        BlockState blockstate = BlockRegistry.SULPHURIC_GRASS.get().defaultBlockState();
+        BlockState blockstate = Blocks.GRASS.defaultBlockState();
 
         label48:
         for(int i = 0; i < 128; ++i) {
