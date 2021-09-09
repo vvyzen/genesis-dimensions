@@ -1,0 +1,14 @@
+{
+  "config": {
+    "top_material": {
+      "Name": "ssvrfi:azurite"
+    },
+    "under_material": {
+      "Name": "ssvrfi:azurite"
+    },
+    "underwater_material": {
+      "Name": "ssvrfi:azurite"
+    }
+  },
+  "type": "minecraft:default"
+}

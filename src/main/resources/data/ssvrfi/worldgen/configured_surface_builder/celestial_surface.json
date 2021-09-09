@@ -1,0 +1,14 @@
+{
+  "config": {
+    "top_material": {
+      "Name": "ssvrfi:empty_space"
+    },
+    "under_material": {
+      "Name": "ssvrfi:empty_space"
+    },
+    "underwater_material": {
+      "Name": "ssvrfi:empty_space"
+    }
+  },
+  "type": "minecraft:default"
+}

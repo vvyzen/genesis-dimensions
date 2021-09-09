@@ -36,6 +36,10 @@ public class BlockRegistry {
     //public static final RegistryObject<Block> MOSSY_SKYSTONE = BLOCKS.register("mossy_skystone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(4.0F, 6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SKYSTONE = BLOCKS.register("skystone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(4.0F, 6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> MOSSY_MOONSTONE = BLOCKS.register("mossy_moonstone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(4.0F, 6.0F).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> AZURITE = BLOCKS.register("azurite", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(4.0F, 6.0F).requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> EMPTY_SPACE = BLOCKS.register("empty_space", () -> new Block(BlockBehaviour.Properties.of(Material.GLASS).sound(SoundType.GLASS).strength(100000.0F, 3600000.0F).noDrops()));
+
 
     public static final RegistryObject<BushBlock> CLOVER = BLOCKS.register("clover", () -> new BushBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS)));
 

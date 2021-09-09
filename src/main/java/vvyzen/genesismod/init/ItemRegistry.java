@@ -101,6 +101,7 @@ public class ItemRegistry {
     //public static final RegistryObject<BlockItem> MOSSY_SKYSTONE = ITEMS.register("mossy_skystone", () -> new BlockItemBase(BlockRegistry.MOSSY_SKYSTONE.get()));
     public static final RegistryObject<BlockItem> SKYSTONE = ITEMS.register("skystone", () -> new BlockItemBase(BlockRegistry.SKYSTONE.get()));
     public static final RegistryObject<BlockItem> MOSSY_MOONSTONE = ITEMS.register("mossy_moonstone", () -> new BlockItemBase(BlockRegistry.MOSSY_MOONSTONE.get()));
+    public static final RegistryObject<BlockItem> AZURITE = ITEMS.register("azurite", () -> new BlockItemBase(BlockRegistry.AZURITE.get()));
 
     public static final RegistryObject<BlockItem> CLOVER = ITEMS.register("clover", () -> new BlockItemBase(BlockRegistry.CLOVER.get()));
 
