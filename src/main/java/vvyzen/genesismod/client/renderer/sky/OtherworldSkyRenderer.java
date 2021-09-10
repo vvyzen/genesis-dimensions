@@ -61,9 +61,9 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
     public OtherworldSkyRenderer() {
         this.minecraft = Minecraft.getInstance();
 
-        this.createStars();
-        this.createLightSky();
-        this.createDarkSky();
+        createStars();
+        createLightSky();
+        createDarkSky();
     }
 
 
