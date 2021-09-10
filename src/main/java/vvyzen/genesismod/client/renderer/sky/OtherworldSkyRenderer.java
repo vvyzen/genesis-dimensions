@@ -157,11 +157,6 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
     @Override
     public void render(int ticks, float partialTicks, PoseStack matrixStack, ClientLevel world, Minecraft mc) {
         mc.run();
-        ISkyRenderHandler renderHandler = level.effects().getSkyRenderHandler();
-        if (renderHandler != null) {
-            renderHandler.render(ticks, partialTicks, matrixStack, level, minecraft);
-            return;
-        }
         if (this.minecraft.level.effects().skyType() == DimensionSpecialEffects.SkyType.NORMAL) {
             RenderSystem.disableTexture();
             Vec3 vec3 = this.level.getSkyColor(this.minecraft.gameRenderer.getMainCamera().getPosition(), partialTicks);
