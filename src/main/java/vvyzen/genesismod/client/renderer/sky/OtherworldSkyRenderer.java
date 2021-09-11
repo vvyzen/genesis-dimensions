@@ -42,21 +42,12 @@ import java.util.SortedSet;
 public class OtherworldSkyRenderer implements ISkyRenderHandler{
     private static final ResourceLocation SUN_LOCATION = new ResourceLocation("ssvrfi", "textures/environment/theia_star.png");
     //private static final ResourceLocation MOON_LOCATION = new ResourceLocation("ssvrfi","textures/environment/accursed_moon.png");
-    private ClientLevel level;
-    private int ticks;
-    private final Minecraft minecraft;
-    private RenderBuffers renderBuffers;
-    private TextureManager textureManager;
+    private Minecraft minecraft;
     private VertexBuffer starBuffer;
     @Nullable
     private VertexBuffer skyBuffer;
     @Nullable
     private VertexBuffer darkBuffer;
-
-
-    public void setLevel(ClientLevel p_109702_) {
-        this.level = p_109702_;
-    }
 
     public OtherworldSkyRenderer() {
         this.minecraft = Minecraft.getInstance();
@@ -65,7 +56,6 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
         createLightSky();
         createDarkSky();
     }
-
 
     private void createDarkSky() {
         Tesselator tesselator = Tesselator.getInstance();
@@ -112,7 +102,7 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
         }
 
         this.starBuffer = new VertexBuffer();
-        this.drawStars(bufferbuilder);
+        drawStars(bufferbuilder);
         bufferbuilder.end();
         this.starBuffer.upload(bufferbuilder);
     }
@@ -230,7 +220,7 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
             if (f10 > 0.0F) {
                 RenderSystem.setShaderColor(f10, f10, f10, f10);
                 FogRenderer.setupNoFog();
-                this.starBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), Objects.requireNonNull(GameRenderer.getPositionShader()));
+                this.starBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), GameRenderer.getPositionShader());
             }
 
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);

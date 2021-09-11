@@ -36,21 +36,16 @@ import vvyzen.genesismod.util.tooltiers.*;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod("ssvrfi")
 public class GenesisMod
 {
-    // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
     public static final String MODID = "ssvrfi";
 
 
     public GenesisMod() {
-        // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
 
         ItemRegistry.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -68,7 +63,6 @@ public class GenesisMod
         TierSorter.ABYSSALITE_TIER = TierSortingRegistry.registerTier(new AbyssaliteToolTier(), new ResourceLocation("ssvrfi", "abyssalite"), TierSorter.abyssalite_after, TierSorter.abyssalite_before);
 
         //TierSortingRegistry.isCorrectTierForDrops(Tiers.STONE, BlockRegistry.ABYSSALITE_ORE.get().defaultBlockState());
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
 
