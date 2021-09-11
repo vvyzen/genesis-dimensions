@@ -149,7 +149,6 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
                 }
             }
         }
-
     }
     @Override
     public void render(int ticks, float partialTicks, PoseStack matrixStack, ClientLevel world, Minecraft mc) {
@@ -220,7 +219,7 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
             if (f10 > 0.0F) {
                 FogRenderer.setupNoFog();
                 RenderSystem.setShaderColor(f10, f10, f10, f10);
-                this.starBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), shaderinstance);
+                this.starBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), GameRenderer.getPositionShader());
             }
 
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
