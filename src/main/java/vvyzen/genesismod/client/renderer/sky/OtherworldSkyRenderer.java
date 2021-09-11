@@ -213,12 +213,11 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
             bufferbuilder.vertex(matrix4f1, -f12, 100.0F, f12).uv(0.0F, 1.0F).endVertex();
             bufferbuilder.end();
             BufferUploader.end(bufferbuilder);
-            f12 = 20.0F;
             RenderSystem.disableTexture();
             float f10 = world.getStarBrightness(partialTicks) * f11;
             if (f10 > 0.0F) {
                 FogRenderer.setupNoFog();
-                RenderSystem.setShaderColor(f10, f10, f10, f10);
+                RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
                 this.starBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), GameRenderer.getPositionShader());
             }
 

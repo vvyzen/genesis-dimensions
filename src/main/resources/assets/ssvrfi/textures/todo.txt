@@ -1,6 +1,7 @@
 -custom armor textures for black diamond/abyssalite
 -normal armor textures for other ores
--original textures for: red moss, ash, soot, burning ash blocks, core bedrock, new saplings, new leaves/planks/logs, new stone varients for otherworld
+-original textures for: red moss, ash, soot, burning ash blocks, core bedrock, azurite, new saplings, new leaves/planks/logs, new stone varients for otherworld
 -clean up moonstone a bit
+-polish skystone
 -clean up environmental textures
 -crazy space textures for sky renderer
