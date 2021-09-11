@@ -199,7 +199,7 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
             RenderSystem.enableTexture();
             RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
             matrixStack.pushPose();
-            float f11 = 1.0F - world.getRainLevel(partialTicks);
+            float f11 = 1.0F - world.getRainLevel(partialTicks) * 0.5F;
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, f11);
             matrixStack.mulPose(Vector3f.YP.rotationDegrees(-90.0F));
             matrixStack.mulPose(Vector3f.XP.rotationDegrees(world.getTimeOfDay(partialTicks) * 360.0F));
@@ -218,9 +218,9 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
             RenderSystem.disableTexture();
             float f10 = world.getStarBrightness(partialTicks) * f11;
             if (f10 > 0.0F) {
-                RenderSystem.setShaderColor(f10, f10, f10, f10);
                 FogRenderer.setupNoFog();
-                this.starBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), GameRenderer.getPositionShader());
+                RenderSystem.setShaderColor(f10, f10, f10, f10);
+                this.starBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), shaderinstance);
             }
 
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
