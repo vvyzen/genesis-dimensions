@@ -35,6 +35,7 @@ import net.minecraftforge.client.ISkyRenderHandler;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 import java.util.SortedSet;
 
@@ -46,7 +47,6 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
     private final Minecraft minecraft;
     private RenderBuffers renderBuffers;
     private TextureManager textureManager;
-    @Nullable
     private VertexBuffer starBuffer;
     @Nullable
     private VertexBuffer skyBuffer;
@@ -214,7 +214,7 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
             matrixStack.mulPose(Vector3f.YP.rotationDegrees(-90.0F));
             matrixStack.mulPose(Vector3f.XP.rotationDegrees(world.getTimeOfDay(partialTicks) * 360.0F));
             Matrix4f matrix4f1 = matrixStack.last().pose();
-            float f12 = 30.0F;
+            float f12 = 60.0F;
             RenderSystem.setShader(GameRenderer::getPositionTexShader);
             RenderSystem.setShaderTexture(0, SUN_LOCATION);
             bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
@@ -230,7 +230,7 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
             if (f10 > 0.0F) {
                 RenderSystem.setShaderColor(f10, f10, f10, f10);
                 FogRenderer.setupNoFog();
-                this.starBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), GameRenderer.getPositionShader());
+                this.starBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), Objects.requireNonNull(GameRenderer.getPositionShader()));
             }
 
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
