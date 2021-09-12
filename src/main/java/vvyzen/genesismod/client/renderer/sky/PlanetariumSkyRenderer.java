@@ -10,11 +10,11 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.ShaderInstance;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.ISkyRenderHandler;
-import vvyzen.genesismod.util.MathUtils;
+import vvyzen.genesismod.util.GenesisUtils;
+import vvyzen.genesismod.util.ClinkerMathUtils;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -252,7 +252,7 @@ public class PlanetariumSkyRenderer implements ISkyRenderHandler{
         matrixStackIn.pushPose();
 
         int skyRadius = 50;
-        int starCount = 6000;
+        int starCount = 10000;
         double starRadius = (skyRadius / 3.0F - 2.0F);
 
         for(int i = 0; i < starCount; ++i) {
@@ -260,8 +260,8 @@ public class PlanetariumSkyRenderer implements ISkyRenderHandler{
             double starX = (double)(random.nextFloat() * 2.0F - 1.0F);
             double starY = (double)(random.nextFloat() * 2.0F - 1.0F);
             double starZ = (double)(random.nextFloat() * 2.0F - 1.0F);
-            double starSize = (double)(0.01F + random.nextFloat() * 0.05F);
-            double starDistance = starRadius * MathUtils.getRandomFloatBetween(random, 0.65F, 1.0F);
+            double starSize = (double)(0.004F + random.nextFloat() * 0.05F);
+            double starDistance = starRadius * ClinkerMathUtils.getRandomFloatBetween(random, 0.65F, 1.0F);
 
             double d4 = starX * starX + starY * starY + starZ * starZ;
             if (d4 < 1.0D && d4 > 0.01D) {
@@ -295,13 +295,17 @@ public class PlanetariumSkyRenderer implements ISkyRenderHandler{
                     double d25 = d24 * d9 - d22 * d10;
                     double d26 = d22 * d9 + d24 * d10;
 
-                    //float starHeight = MathUtils.mapRange(0.0F, (float)starDistance, 0.4F, 1.2F, (float)(d6 + d23));
-                    float r = (MathUtils.getRandomFloatBetween(random,230.0F, 245.0F)/255.0F);
-                    float g = (MathUtils.getRandomFloatBetween(random,190.0F, 245.0F)/255.0F);
-                    float b = (MathUtils.getRandomFloatBetween(random,210.0F, 245.0F)/255.0F);
+                    //float r = (MathUtils.getRandomFloatBetween(random,230.0F, 245.0F)/255.0F);
+                    //float g = (MathUtils.getRandomFloatBetween(random,190.0F, 245.0F)/255.0F);
+                    //float b = (MathUtils.getRandomFloatBetween(random,210.0F, 245.0F)/255.0F);
+                    float[] rgb = GenesisUtils.BlackbodyRGBGenerator(random,1.0F, 0.4F, 10, 0.6F);
 
-                    float starHeight = Math.abs((MathUtils.mapRange(0.0F, (float)starDistance, 0.1F, 1.0F, ((float)(d6 + d23)))));
-                    float starBrightness = MathUtils.getRandomFloatBetween(random, 0.6F, 1.0F);
+                    float r = rgb[0];
+                    float g = rgb[1];
+                    float b = rgb[2];
+
+                    float starHeight = Math.abs((ClinkerMathUtils.mapRange(0.0F, (float)starDistance, 0.05F, 1.0F, ((float)(d6 + d23)))));
+                    float starBrightness = ClinkerMathUtils.getRandomFloatBetween(random, 0.8F, 1.2F);
 
                     float red = (r*starHeight)*starBrightness;
                     float green = (g*starHeight)*starBrightness;

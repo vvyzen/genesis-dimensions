@@ -15,7 +15,7 @@ import java.util.Random;
 /* cappin's math utils
  * hope you find this useful :) */
 // i do ty
-public class MathUtils {
+public class ClinkerMathUtils {
     /**
      * Maps one range of numbers to another. Incredibly useful function for lazy people like me.
      * @param fromMin The minimum of the range you're mapping from.
@@ -114,7 +114,7 @@ public class MathUtils {
         float f = (height - k * terraceWidth) / terraceWidth;
         float s = Math.min(2.0f * f, 1.0f);
 
-        float terraceMultiplier = Mth.clamp(MathUtils.invert(Math.abs(s - 1.0F)), 0.0F, 1.0F);
+        float terraceMultiplier = Mth.clamp(ClinkerMathUtils.invert(Math.abs(s - 1.0F)), 0.0F, 1.0F);
 
         return Pair.of(Mth.lerp(erosion,(k + s) * terraceWidth, height), terraceMultiplier);
     }
