@@ -28,6 +28,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vvyzen.genesismod.client.renderer.OtherworldRenderInfo;
+import vvyzen.genesismod.client.renderer.PlanetariumRenderInfo;
 import vvyzen.genesismod.init.BlockRegistry;
 import vvyzen.genesismod.init.ItemRegistry;
 import vvyzen.genesismod.util.tooltiers.*;
@@ -81,6 +82,8 @@ public class GenesisMod
 
 
         DimensionSpecialEffects.EFFECTS.put(new ResourceLocation("ssvrfi", "otherworld"), new OtherworldRenderInfo());
+        DimensionSpecialEffects.EFFECTS.put(new ResourceLocation("ssvrfi", "planetarium"), new PlanetariumRenderInfo());
+
         setRenderLayer(BlockRegistry.SULPHURIC_GRASS.get(), RenderType.cutout());
         setRenderLayer(BlockRegistry.CLOVER.get(), RenderType.cutout());
         setRenderLayer(BlockRegistry.ASHWOOD_LEAVES.get(), RenderType.translucent());

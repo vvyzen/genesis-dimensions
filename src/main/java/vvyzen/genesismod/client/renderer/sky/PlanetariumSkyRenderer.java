@@ -1,47 +1,25 @@
 package vvyzen.genesismod.client.renderer.sky;
 
 import com.mojang.blaze3d.platform.GlStateManager;
-import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import com.mojang.math.Matrix4f;
 import com.mojang.math.Vector3f;
-import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
-import net.minecraft.Util;
-import net.minecraft.client.CloudStatus;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.Option;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.culling.Frustum;
-import net.minecraft.client.renderer.texture.TextureAtlas;
-import net.minecraft.client.renderer.texture.TextureManager;
-import net.minecraft.client.resources.model.ModelBakery;
-import net.minecraft.core.BlockPos;
+import net.minecraft.client.renderer.FogRenderer;
+import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.BlockDestructionProgress;
 import net.minecraft.util.Mth;
-import net.minecraft.util.profiling.ProfilerFiller;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.ISkyRenderHandler;
+import vvyzen.genesismod.util.MathUtils;
 
 import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Objects;
 import java.util.Random;
-import java.util.SortedSet;
 
-public class OtherworldSkyRenderer implements ISkyRenderHandler{
-    private static final ResourceLocation SUN_LOCATION = new ResourceLocation("ssvrfi", "textures/environment/theia_star.png");
-    //private static final ResourceLocation MOON_LOCATION = new ResourceLocation("ssvrfi","textures/environment/accursed_moon.png");
+public class PlanetariumSkyRenderer implements ISkyRenderHandler{
     private Minecraft minecraft;
     private VertexBuffer starBuffer;
     @Nullable
@@ -49,10 +27,9 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
     @Nullable
     private VertexBuffer darkBuffer;
 
-    public OtherworldSkyRenderer() {
+    public PlanetariumSkyRenderer() {
         this.minecraft = Minecraft.getInstance();
 
-        createStars();
         createLightSky();
         createDarkSky();
     }
@@ -93,19 +70,7 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
 
         p_172948_.end();
     }
-    private void createStars() {
-        Tesselator tesselator = Tesselator.getInstance();
-        BufferBuilder bufferbuilder = tesselator.getBuilder();
-        RenderSystem.setShader(GameRenderer::getPositionShader);
-        if (this.starBuffer != null) {
-            this.starBuffer.close();
-        }
 
-        this.starBuffer = new VertexBuffer();
-        drawStars(bufferbuilder);
-        bufferbuilder.end();
-        this.starBuffer.upload(bufferbuilder);
-    }
     private void drawStars(BufferBuilder p_109555_) {
         Random random = new Random(10842L);
         p_109555_.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
@@ -163,6 +128,9 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
             RenderSystem.setShaderColor(f, f1, f2, 1.0F);
             ShaderInstance shaderinstance = RenderSystem.getShader();
             this.skyBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), shaderinstance);
+
+            renderStars(matrixStack);
+
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();
             float[] afloat = world.effects().getSunriseColor(world.getTimeOfDay(ticks), partialTicks);
@@ -205,21 +173,21 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
             Matrix4f matrix4f1 = matrixStack.last().pose();
             float f12 = 60.0F;
             RenderSystem.setShader(GameRenderer::getPositionTexShader);
-            RenderSystem.setShaderTexture(0, SUN_LOCATION);
+            /*RenderSystem.setShaderTexture(0, SUN_LOCATION);
             bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
             bufferbuilder.vertex(matrix4f1, -f12, 100.0F, -f12).uv(0.0F, 0.0F).endVertex();
             bufferbuilder.vertex(matrix4f1, f12, 100.0F, -f12).uv(1.0F, 0.0F).endVertex();
             bufferbuilder.vertex(matrix4f1, f12, 100.0F, f12).uv(1.0F, 1.0F).endVertex();
             bufferbuilder.vertex(matrix4f1, -f12, 100.0F, f12).uv(0.0F, 1.0F).endVertex();
             bufferbuilder.end();
-            BufferUploader.end(bufferbuilder);
+            BufferUploader.end(bufferbuilder);*/
             //RenderSystem.disableTexture();
             float f10 = world.getStarBrightness(partialTicks) * f11;
-            if (f10 > 0.0F) {
+            /*if (f10 > 0.0F) {
                 FogRenderer.setupNoFog();
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
                 this.starBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), GameRenderer.getPositionShader());
-            }
+            }*/
 
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.disableBlend();
@@ -245,5 +213,113 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
 
     }
 
+    /*private void renderStars(PoseStack matrixStackIn, float skyRadius, Random rand, int ticksIn, float partialTicks){
+        RenderSystem.disableDepthTest();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.depthMask(false);
+
+        Tesselator tesselator = Tesselator.getInstance();
+        BufferBuilder bufferbuilder = tesselator.getBuilder();
+        RenderSystem.setShader(GameRenderer::getPositionShader);
+        matrixStackIn.pushPose();
+        float ticks = ticksIn + partialTicks;
+
+        int starCount = 500;
+        double starRadius = (skyRadius / 3.0F - 2.0F);
+        for(int i = 0; i < starCount; i++){
+            double starX = (rand.nextFloat() * 2.0F - 1.0F);
+            double starY = rand.nextFloat();
+            double starZ = (rand.nextFloat() * 2.0F - 1.0F);
+            double starSize = (0.01F + rand.nextFloat() * 0.017F);
+            double starDistance = starRadius * (0.65F + Math.random() * (1.0F - 0.65F));
+
+
+
+        }
+    }*/
+
+    private void renderStars(PoseStack matrixStackIn) {
+        RenderSystem.disableDepthTest();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.depthMask(false);
+        RenderSystem.setShader(GameRenderer::getPositionShader);
+        Matrix4f matrix4f = matrixStackIn.last().pose();
+        Tesselator tesselator = Tesselator.getInstance();
+        BufferBuilder bufferbuilder = tesselator.getBuilder();
+        Random random = new Random(73526L);
+        matrixStackIn.pushPose();
+
+        int skyRadius = 50;
+        int starCount = 6000;
+        double starRadius = (skyRadius / 3.0F - 2.0F);
+
+        for(int i = 0; i < starCount; ++i) {
+
+            double starX = (double)(random.nextFloat() * 2.0F - 1.0F);
+            double starY = (double)(random.nextFloat() * 2.0F - 1.0F);
+            double starZ = (double)(random.nextFloat() * 2.0F - 1.0F);
+            double starSize = (double)(0.01F + random.nextFloat() * 0.05F);
+            double starDistance = starRadius * MathUtils.getRandomFloatBetween(random, 0.65F, 1.0F);
+
+            double d4 = starX * starX + starY * starY + starZ * starZ;
+            if (d4 < 1.0D && d4 > 0.01D) {
+                d4 = 1.0D / Math.sqrt(d4);
+                starX = starX * d4;
+                starY = starY * d4;
+                starZ = starZ * d4;
+                double d5 = starX * starDistance;
+                double d6 = starY * starDistance;
+                double d7 = starZ * starDistance;
+                double d8 = Math.atan2(starX, starZ);
+                double d9 = Math.sin(d8);
+                double d10 = Math.cos(d8);
+                double d11 = Math.atan2(Math.sqrt(starX * starX + starZ * starZ), starY);
+                double d12 = Math.sin(d11);
+                double d13 = Math.cos(d11);
+                double d14 = random.nextDouble() * Math.PI * 2.0D;
+                double d15 = Math.sin(d14);
+                double d16 = Math.cos(d14);
+
+                bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
+                for(int j = 0; j < 4; ++j) {
+                    double d17 = 0.0D;
+                    double d18 = (double)((j & 2) - 1) * starSize;
+                    double d19 = (double)((j + 1 & 2) - 1) * starSize;
+                    double d20 = 0.0D;
+                    double d21 = d18 * d16 - d19 * d15;
+                    double d22 = d19 * d16 + d18 * d15;
+                    double d23 = d21 * d12 + 0.0D * d13;
+                    double d24 = 0.0D * d12 - d21 * d13;
+                    double d25 = d24 * d9 - d22 * d10;
+                    double d26 = d22 * d9 + d24 * d10;
+
+                    //float starHeight = MathUtils.mapRange(0.0F, (float)starDistance, 0.4F, 1.2F, (float)(d6 + d23));
+                    float r = (MathUtils.getRandomFloatBetween(random,230.0F, 245.0F)/255.0F);
+                    float g = (MathUtils.getRandomFloatBetween(random,190.0F, 245.0F)/255.0F);
+                    float b = (MathUtils.getRandomFloatBetween(random,210.0F, 245.0F)/255.0F);
+
+                    float starHeight = Math.abs((MathUtils.mapRange(0.0F, (float)starDistance, 0.1F, 1.0F, ((float)(d6 + d23)))));
+                    float starBrightness = MathUtils.getRandomFloatBetween(random, 0.6F, 1.0F);
+
+                    float red = (r*starHeight)*starBrightness;
+                    float green = (g*starHeight)*starBrightness;
+                    float blue = (b*starHeight)*starBrightness;
+
+                    RenderSystem.setShaderColor(red,green,blue, 1.0F);
+                    bufferbuilder.vertex(matrix4f,(float)(d5 + d25), (float)(d6 + d23), (float)(d7 + d26)).endVertex();
+                }
+                tesselator.end();
+            }
+        }
+        matrixStackIn.popPose();
+
+        RenderSystem.depthMask(true);
+        RenderSystem.enableTexture();
+        RenderSystem.disableBlend();
+        RenderSystem.enableDepthTest();
+
+    }
 
 }
