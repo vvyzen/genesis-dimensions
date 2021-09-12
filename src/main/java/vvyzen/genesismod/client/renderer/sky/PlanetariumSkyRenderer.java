@@ -13,8 +13,6 @@ import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.ISkyRenderHandler;
-import vvyzen.genesismod.util.GenesisUtils;
-import vvyzen.genesismod.util.ClinkerMathUtils;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -129,7 +127,7 @@ public class PlanetariumSkyRenderer implements ISkyRenderHandler{
             ShaderInstance shaderinstance = RenderSystem.getShader();
             this.skyBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), shaderinstance);
 
-            renderStars(matrixStack);
+        StarRenderer.RenderStars(matrixStack, 10000, new Random(73526L), world, partialTicks);
 
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();
@@ -239,7 +237,7 @@ public class PlanetariumSkyRenderer implements ISkyRenderHandler{
         }
     }*/
 
-    private void renderStars(PoseStack matrixStackIn) {
+    /*private void renderStars(PoseStack matrixStackIn) {
         RenderSystem.disableDepthTest();
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
@@ -324,6 +322,6 @@ public class PlanetariumSkyRenderer implements ISkyRenderHandler{
         RenderSystem.disableBlend();
         RenderSystem.enableDepthTest();
 
-    }
+    }*/
 
 }

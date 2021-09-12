@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class GenesisUtils {
 
-    //BlackbodyRGBGenerator generates color based on blackbody radiation
+    // * BlackbodyRGBGenerator generates color based on blackbody radiation
     //saturation for how much the color is darkened, so just saturation
     //greenExponent affects the cutoff of the green color, so a lower value means a smoother gradient from yellow/cyan to red/blue
     //greenOffset affects the cutoff offset, at 0 there will be barely any pure red/blue stars, recommended value is 0.6
