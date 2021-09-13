@@ -13,5 +13,5 @@
   "min_y": -64,
   "height": 448,
   "infiniburn": "minecraft:infiniburn_end",
-  "effects": "minecraft:overworld"
+  "effects": "ssvrfi:eden"
 }

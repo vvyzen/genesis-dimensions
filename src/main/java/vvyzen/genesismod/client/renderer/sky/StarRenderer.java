@@ -8,6 +8,7 @@ import com.mojang.math.Vector3f;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.util.Mth;
 import vvyzen.genesismod.util.ClinkerMathUtils;
 import vvyzen.genesismod.util.GenesisUtils;
 
@@ -19,7 +20,7 @@ public class StarRenderer {
 
 
 
-    public static void RenderStars(PoseStack matrixStackIn, float starCount, Random random, ClientLevel world, float partialTicks) {
+    public static void RenderStars(PoseStack matrixStackIn, float starCount, Random random, ClientLevel world, float partialTicks, float flatStarBrightness) {
         RenderSystem.enableBlend();
         RenderSystem.setShader(GameRenderer::getPositionShader);
         //Matrix4f matrix4f = matrixStackIn.last().pose();
@@ -40,7 +41,7 @@ public class StarRenderer {
             double starX = (double)(random.nextFloat() * 2.0F - 1.0F);
             double starY = (double)(random.nextFloat() * 2.0F - 1.0F);
             double starZ = (double)(random.nextFloat() * 2.0F - 1.0F);
-            double starSize = (double)(0.004F + random.nextFloat() * 0.05F);
+            double starSize = (double)(0.008F + random.nextFloat() * 0.05F);
             double starDistance = starRadius * ClinkerMathUtils.getRandomFloatBetween(random, 0.65F, 1.0F);
 
             double d4 = starX * starX + starY * starY + starZ * starZ;
@@ -78,7 +79,7 @@ public class StarRenderer {
                     double d25 = d24 * d9 - d22 * d10;
                     double d26 = d22 * d9 + d24 * d10;
 
-                    float[] rgb = GenesisUtils.BlackbodyRGBGenerator(random,1.0F, 0.4F, 10, 0.6F);
+                    float[] rgb = GenesisUtils.BlackbodyRGBGenerator(random,1.0F, 0.4F, 6, 0.6F);
 
                     float r = rgb[0];
                     float g = rgb[1];
@@ -87,13 +88,13 @@ public class StarRenderer {
                     float starHeight = Math.abs((ClinkerMathUtils.mapRange(0.0F, (float)starDistance, 0.1F, 1.0F, ((float)(d6 + d23)))));
                     float starValue = ClinkerMathUtils.getRandomFloatBetween(random, 0.8F, 1.2F);
                     //float starBrightness = ClinkerMathUtils.mapRange(0.0F, world.getTimeOfDay(partialTicks), 0.0F, 1.0F, world.getTimeOfDay(partialTicks));
-                    float starBrightness = world.getStarBrightness(partialTicks);
+                    float starBrightness = Mth.clamp((world.getStarBrightness(partialTicks))+flatStarBrightness, 0.0F, 1.0F);
 
                     float red = (r)*starValue;
                     float green = (g)*starValue;
                     float blue = (b)*starValue;
 
-                    RenderSystem.setShaderColor(red,green,blue, starBrightness*starHeight);
+                    RenderSystem.setShaderColor(red,green,blue, (starBrightness*starHeight));
                     //matrixStackIn.pushPose();
                     //matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(-90.0F));
                     //matrixStackIn.mulPose(Vector3f.XP.rotationDegrees(world.getTimeOfDay(partialTicks) * 360.0F));

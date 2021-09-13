@@ -1,45 +1,24 @@
 package vvyzen.genesismod.client.renderer.sky;
 
 import com.mojang.blaze3d.platform.GlStateManager;
-import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import com.mojang.math.Matrix4f;
 import com.mojang.math.Vector3f;
-import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
-import net.minecraft.Util;
-import net.minecraft.client.CloudStatus;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.Option;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.culling.Frustum;
-import net.minecraft.client.renderer.texture.TextureAtlas;
-import net.minecraft.client.renderer.texture.TextureManager;
-import net.minecraft.client.resources.model.ModelBakery;
-import net.minecraft.core.BlockPos;
+import net.minecraft.client.renderer.FogRenderer;
+import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.BlockDestructionProgress;
 import net.minecraft.util.Mth;
-import net.minecraft.util.profiling.ProfilerFiller;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.ISkyRenderHandler;
 
 import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Objects;
 import java.util.Random;
-import java.util.SortedSet;
 
-public class OtherworldSkyRenderer implements ISkyRenderHandler{
+public class EdenSkyRenderer implements ISkyRenderHandler{
     private static final ResourceLocation SUN_LOCATION = new ResourceLocation("ssvrfi", "textures/environment/theia_star.png");
     //private static final ResourceLocation MOON_LOCATION = new ResourceLocation("ssvrfi","textures/environment/accursed_moon.png");
     private Minecraft minecraft;
@@ -48,9 +27,8 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
     @Nullable
     private VertexBuffer darkBuffer;
 
-    public OtherworldSkyRenderer() {
+    public EdenSkyRenderer() {
         this.minecraft = Minecraft.getInstance();
-
         createLightSky();
         createDarkSky();
     }
@@ -157,11 +135,10 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
             bufferbuilder.end();
             BufferUploader.end(bufferbuilder);
             //RenderSystem.disableTexture();
-            float f10 = world.getStarBrightness(partialTicks) * f11;
+            float f10 = (world.getStarBrightness(partialTicks) * f11) + 0.1F;
             if (f10 > 0.0F) {
                 FogRenderer.setupNoFog();
-                StarRenderer.RenderStars(matrixStack, 5000, new Random(32592L), world, partialTicks, 0.0F);
-
+                StarRenderer.RenderStars(matrixStack, 5000, new Random(32592L), world, partialTicks, 0.4F);
                 }
 
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);

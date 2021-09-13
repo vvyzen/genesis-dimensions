@@ -127,7 +127,7 @@ public class PlanetariumSkyRenderer implements ISkyRenderHandler{
             ShaderInstance shaderinstance = RenderSystem.getShader();
             this.skyBuffer.drawWithShader(matrixStack.last().pose(), matrixStack.last().pose(), shaderinstance);
 
-        StarRenderer.RenderStars(matrixStack, 10000, new Random(73526L), world, partialTicks);
+        StarRenderer.RenderStars(matrixStack, 10000, new Random(73526L), world, partialTicks, 1.0F);
 
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();

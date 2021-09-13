@@ -27,6 +27,7 @@ import net.minecraftforge.fmlserverevents.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import vvyzen.genesismod.client.renderer.EdenRenderInfo;
 import vvyzen.genesismod.client.renderer.OtherworldRenderInfo;
 import vvyzen.genesismod.client.renderer.PlanetariumRenderInfo;
 import vvyzen.genesismod.init.BlockRegistry;
@@ -82,6 +83,7 @@ public class GenesisMod
 
 
         DimensionSpecialEffects.EFFECTS.put(new ResourceLocation("ssvrfi", "otherworld"), new OtherworldRenderInfo());
+        DimensionSpecialEffects.EFFECTS.put(new ResourceLocation("ssvrfi", "eden"), new EdenRenderInfo());
         DimensionSpecialEffects.EFFECTS.put(new ResourceLocation("ssvrfi", "planetarium"), new PlanetariumRenderInfo());
 
         setRenderLayer(BlockRegistry.SULPHURIC_GRASS.get(), RenderType.cutout());
