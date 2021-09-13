@@ -18,15 +18,15 @@ import net.minecraftforge.client.ISkyRenderHandler;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class EdenSkyRenderer implements ISkyRenderHandler{
-    private static final ResourceLocation SUN_LOCATION = new ResourceLocation("ssvrfi", "textures/environment/theia_star.png");
+public class TethysSkyRenderer implements ISkyRenderHandler{
+    private static final ResourceLocation SUN_LOCATION = new ResourceLocation("ssvrfi", "textures/environment/tethys_star.png");
     private Minecraft minecraft;
     @Nullable
     private VertexBuffer skyBuffer;
     @Nullable
     private VertexBuffer darkBuffer;
 
-    public EdenSkyRenderer() {
+    public TethysSkyRenderer() {
         this.minecraft = Minecraft.getInstance();
         createLightSky();
         createDarkSky();
@@ -123,7 +123,7 @@ public class EdenSkyRenderer implements ISkyRenderHandler{
             matrixStack.mulPose(Vector3f.YP.rotationDegrees(-90.0F));
             matrixStack.mulPose(Vector3f.XP.rotationDegrees(world.getTimeOfDay(partialTicks) * 360.0F));
             Matrix4f matrix4f1 = matrixStack.last().pose();
-            float f12 = 60.0F;
+            float f12 = 16.0F;
             RenderSystem.setShader(GameRenderer::getPositionTexShader);
             RenderSystem.setShaderTexture(0, SUN_LOCATION);
             bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
@@ -137,7 +137,7 @@ public class EdenSkyRenderer implements ISkyRenderHandler{
             float f10 = (world.getStarBrightness(partialTicks) * f11) + 0.1F;
             if (f10 > 0.0F) {
                 FogRenderer.setupNoFog();
-                StarRenderer.RenderStars(matrixStack, 3000, new Random(32592L), world, partialTicks, 0.4F, 0.4F, false, true);
+                StarRenderer.RenderStars(matrixStack, 3000, new Random(32592L), world, partialTicks, 0.8F, 0.2F, false, true);
                 }
 
             RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);

@@ -42,6 +42,16 @@
           },
           "biome": "ssvrfi:desolate_fields"
         },
+		        {
+          "parameters": {
+            "altitude": 0.6,
+            "weirdness": 0.2,
+            "offset": 0.0,
+            "temperature": -0.8,
+            "humidity": -0.8
+          },
+          "biome": "ssvrfi:deadzone"
+        },
 		{
           "parameters": {
             "altitude": 0.1,

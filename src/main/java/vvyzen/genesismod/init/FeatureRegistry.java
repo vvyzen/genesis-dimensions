@@ -13,7 +13,6 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePla
 import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import vvyzen.genesismod.world.level.feature.trunkplacers.EternalTrunkPlacer;
 
@@ -34,10 +33,10 @@ public class FeatureRegistry {
 
         ASHWOOD = register("ashwood", Feature.TREE.configured((
                 new TreeConfiguration.TreeConfigurationBuilder(
-                        new SimpleStateProvider(BlockRegistry.ASHWOOD_LOG.get().defaultBlockState()),
+                        new SimpleStateProvider(BlockRegistry.EVERCHAR_LOG.get().defaultBlockState()),
                         new StraightTrunkPlacer(4, 3, 0),
-                        new SimpleStateProvider(BlockRegistry.ASHWOOD_LEAVES.get().defaultBlockState()),
-                        new SimpleStateProvider(BlockRegistry.ASHWOOD_SAPLING.get().defaultBlockState()),
+                        new SimpleStateProvider(BlockRegistry.EVERCHAR_LEAVES.get().defaultBlockState()),
+                        new SimpleStateProvider(BlockRegistry.EVERCHAR_SAPLING.get().defaultBlockState()),
                         new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                         new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 

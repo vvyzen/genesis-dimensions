@@ -41,7 +41,6 @@ import java.util.SortedSet;
 
 public class OtherworldSkyRenderer implements ISkyRenderHandler{
     private static final ResourceLocation SUN_LOCATION = new ResourceLocation("ssvrfi", "textures/environment/theia_star.png");
-    //private static final ResourceLocation MOON_LOCATION = new ResourceLocation("ssvrfi","textures/environment/accursed_moon.png");
     private Minecraft minecraft;
     @Nullable
     private VertexBuffer skyBuffer;
@@ -160,7 +159,7 @@ public class OtherworldSkyRenderer implements ISkyRenderHandler{
             float f10 = world.getStarBrightness(partialTicks) * f11;
             if (f10 > 0.0F) {
                 FogRenderer.setupNoFog();
-                StarRenderer.RenderStars(matrixStack, 5000, new Random(32592L), world, partialTicks, 0.0F);
+                StarRenderer.RenderStars(matrixStack, 3000, new Random(32592L), world, partialTicks, 0.0F, 0.6F, false, true);
 
                 }
 

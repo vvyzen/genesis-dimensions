@@ -104,11 +104,11 @@ public class ItemRegistry {
     public static final RegistryObject<BlockItem> AZURITE = ITEMS.register("azurite", () -> new BlockItemBase(BlockRegistry.AZURITE.get()));
 
     public static final RegistryObject<BlockItem> CLOVER = ITEMS.register("clover", () -> new BlockItemBase(BlockRegistry.CLOVER.get()));
+    public static final RegistryObject<BlockItem> CAPROOT = ITEMS.register("caproot", () -> new BlockItemBase(BlockRegistry.CAPROOT.get()));
 
-
-    public static final RegistryObject<BlockItem> ASHWOOD_LOG = ITEMS.register("ashwood_log", () -> new BlockItemBase(BlockRegistry.ASHWOOD_LOG.get()));
-    public static final RegistryObject<BlockItem> ASHWOOD_LEAVES = ITEMS.register("ashwood_leaves", () -> new BlockItemBase(BlockRegistry.ASHWOOD_LEAVES.get()));
-    public static final RegistryObject<BlockItem> ASHWOOD_SAPLING = ITEMS.register("ashwood_sapling", () -> new BlockItemBase(BlockRegistry.ASHWOOD_SAPLING.get()));
+    public static final RegistryObject<BlockItem> EVERCHAR_LOG = ITEMS.register("everchar_log", () -> new BlockItemBase(BlockRegistry.EVERCHAR_LOG.get()));
+    public static final RegistryObject<BlockItem> EVERCHAR_LEAVES = ITEMS.register("everchar_leaves", () -> new BlockItemBase(BlockRegistry.EVERCHAR_LEAVES.get()));
+    public static final RegistryObject<BlockItem> EVERCHAR_SAPLING = ITEMS.register("everchar_sapling", () -> new BlockItemBase(BlockRegistry.EVERCHAR_SAPLING.get()));
     public static final RegistryObject<BlockItem> DEAD_LOG = ITEMS.register("dead_log", () -> new BlockItemBase(BlockRegistry.DEAD_LOG.get()));
     public static final RegistryObject<BlockItem> DEAD_LEAVES = ITEMS.register("dead_leaves", () -> new BlockItemBase(BlockRegistry.DEAD_LEAVES.get()));
     public static final RegistryObject<BlockItem> DEAD_SAPLING = ITEMS.register("dead_sapling", () -> new BlockItemBase(BlockRegistry.DEAD_SAPLING.get()));

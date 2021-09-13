@@ -1,18 +1,18 @@
 {
-  "depth": 0.125,
-  "scale": 0.1,
+  "depth": 1.2,
+  "scale": 0.08,
   "precipitation": "rain",
   "temperature_modifier": "none",
-  "temperature": 0.3,
-  "downfall": 0.2,
+  "temperature": 0.0,
+  "downfall": 0.0,
   "category": "plains",
   "effects": {
-    "sky_color": 13427162,
-    "fog_color": 12240827,
+    "sky_color": 13290196,
+    "fog_color": 12237504,
     "grass_color": 13417124,
     "foliage_color": 13417124,
-    "water_color": 9355159,
-    "water_fog_color": 2637360,
+    "water_color": 9348786,
+    "water_fog_color": 2634552,
 	"mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -20,7 +20,7 @@
       "offset": 2
     }
   },
-  "surface_builder": "ssvrfi:default_surface",
+  "surface_builder": "ssvrfi:default_underworld",
   "carvers": {
     "air": [
       "minecraft:cave",
@@ -29,14 +29,14 @@
 	},
   "features": [
     [],
-    ["minecraft:lake_water", "minecraft:lake_lava"],
-    ["minecraft:forest_rock"],
+    ["minecraft:lake_lava"],
+    [],
     [],
     [],
     [],
     ["ssvrfi:ore_pyrite","ssvrfi:ore_iridium","ssvrfi:ore_carbon"],
 	[],
-    ["ssvrfi:patch_grass_fields", "ssvrfi:fields_vegetation"],
+    [],
     []
   ],
   "starts": [

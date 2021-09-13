@@ -42,10 +42,11 @@ public class BlockRegistry {
 
 
     public static final RegistryObject<BushBlock> CLOVER = BLOCKS.register("clover", () -> new BushBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission().instabreak().sound(SoundType.GRASS)));
+    public static final RegistryObject<TallGrassBlock> CAPROOT = BLOCKS.register("caproot", () -> new TallGrassBlock(BlockBehaviour.Properties.of(Material.REPLACEABLE_PLANT).noCollission().instabreak().sound(SoundType.GRASS)));
 
-    public static final RegistryObject<RotatedPillarBlock> ASHWOOD_LOG = BLOCKS.register("ashwood_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).sound(SoundType.WOOD).strength(2.0f)));
-    public static final RegistryObject<LeavesBlock> ASHWOOD_LEAVES = BLOCKS.register("ashwood_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
-    public static final RegistryObject<SaplingBlock> ASHWOOD_SAPLING = BLOCKS.register("ashwood_sapling", () -> new SaplingBlock(new AshTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+    public static final RegistryObject<RotatedPillarBlock> EVERCHAR_LOG = BLOCKS.register("everchar_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).sound(SoundType.WOOD).strength(2.0f)));
+    public static final RegistryObject<LeavesBlock> EVERCHAR_LEAVES = BLOCKS.register("everchar_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<SaplingBlock> EVERCHAR_SAPLING = BLOCKS.register("ashwood_sapling", () -> new SaplingBlock(new AshTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
     public static final RegistryObject<RotatedPillarBlock> DEAD_LOG = BLOCKS.register("dead_log", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_LIGHT_GRAY).sound(SoundType.WOOD).strength(2.0f)));
     public static final RegistryObject<LeavesBlock> DEAD_LEAVES = BLOCKS.register("dead_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<SaplingBlock> DEAD_SAPLING = BLOCKS.register("dead_sapling", () -> new SaplingBlock(new DeadTreeGrower(), BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));

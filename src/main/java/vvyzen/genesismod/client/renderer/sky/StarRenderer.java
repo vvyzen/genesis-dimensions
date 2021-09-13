@@ -1,11 +1,8 @@
 package vvyzen.genesismod.client.renderer.sky;
 
-import ca.weblite.objc.Client;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import com.mojang.math.Matrix4f;
-import com.mojang.math.Vector3f;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.util.Mth;
@@ -16,14 +13,9 @@ import java.util.Random;
 
 public class StarRenderer {
 
-    private final Minecraft minecraft = Minecraft.getInstance();
-
-
-
-    public static void RenderStars(PoseStack matrixStackIn, float starCount, Random random, ClientLevel world, float partialTicks, float flatStarBrightness) {
+    public static void RenderStars(PoseStack matrixStackIn, float starCount, Random random, ClientLevel world, float partialTicks, float flatStarBrightness, float starHeightMin, boolean renderHalf, boolean sunPresent) {
         RenderSystem.enableBlend();
         RenderSystem.setShader(GameRenderer::getPositionShader);
-        //Matrix4f matrix4f = matrixStackIn.last().pose();
 
         Tesselator tesselator = Tesselator.getInstance();
         BufferBuilder bufferbuilder = tesselator.getBuilder();
@@ -33,10 +25,6 @@ public class StarRenderer {
         double starRadius = (skyRadius / 3.0F - 2.0F);
 
         for(int i = 0; i < starCount; ++i) {
-
-            //matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(-90.0F));
-            //matrixStackIn.mulPose(Vector3f.XP.rotationDegrees(world.getTimeOfDay(partialTicks) * 360.0F));
-
 
             double starX = (double)(random.nextFloat() * 2.0F - 1.0F);
             double starY = (double)(random.nextFloat() * 2.0F - 1.0F);
@@ -63,9 +51,6 @@ public class StarRenderer {
                 double d15 = Math.sin(d14);
                 double d16 = Math.cos(d14);
 
-                //matrix4f.multiply(Vector3f.YP.rotationDegrees(-90.0F));
-                //matrix4f.multiply(Vector3f.XP.rotationDegrees(world.getTimeOfDay(partialTicks) * 360.0F));
-
                 bufferbuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
                 for(int j = 0; j < 4; ++j) {
                     double d17 = 0.0D;
@@ -79,27 +64,31 @@ public class StarRenderer {
                     double d25 = d24 * d9 - d22 * d10;
                     double d26 = d22 * d9 + d24 * d10;
 
-                    float[] rgb = GenesisUtils.BlackbodyRGBGenerator(random,1.0F, 0.4F, 6, 0.6F);
+                    float[] rgb = GenesisUtils.BlackbodyRGBGenerator(random,1.0F, 0.4F, 10, 0.6F);
 
                     float r = rgb[0];
                     float g = rgb[1];
                     float b = rgb[2];
 
-                    float starHeight = Math.abs((ClinkerMathUtils.mapRange(0.0F, (float)starDistance, 0.1F, 1.0F, ((float)(d6 + d23)))));
+                    float starHeight = ((ClinkerMathUtils.mapRange(0.0F, (float)starDistance, starHeightMin, 1.0F, ((float)(d6 + d23)))));
+                    float starHeight2 = 0.0F;
+
+                    if(sunPresent){
+                        starHeight2 = Mth.clamp((float) Math.pow((starHeight), 10.0F)-0.4F, 0.0F, 1.0F);
+                    }
+
                     float starValue = ClinkerMathUtils.getRandomFloatBetween(random, 0.8F, 1.2F);
-                    //float starBrightness = ClinkerMathUtils.mapRange(0.0F, world.getTimeOfDay(partialTicks), 0.0F, 1.0F, world.getTimeOfDay(partialTicks));
-                    float starBrightness = Mth.clamp((world.getStarBrightness(partialTicks))+flatStarBrightness, 0.0F, 1.0F);
+                    float starBrightness = Mth.clamp((world.getStarBrightness(partialTicks))+(flatStarBrightness-starHeight2), 0.0F, 1.0F);
 
                     float red = (r)*starValue;
                     float green = (g)*starValue;
                     float blue = (b)*starValue;
 
-                    RenderSystem.setShaderColor(red,green,blue, (starBrightness*starHeight));
-                    //matrixStackIn.pushPose();
-                    //matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(-90.0F));
-                    //matrixStackIn.mulPose(Vector3f.XP.rotationDegrees(world.getTimeOfDay(partialTicks) * 360.0F));
+                    RenderSystem.setShaderColor(red,green,blue, (starBrightness*Math.abs(starHeight))-Math.abs(starHeight2));
                     Matrix4f matrix4f = matrixStackIn.last().pose();
-                    bufferbuilder.vertex(matrix4f,(float)(d5 + d25), (float)(d6 + d23), (float)(d7 + d26)).endVertex();
+                    if(starHeight > 0.0F || !renderHalf) {
+                        bufferbuilder.vertex(matrix4f, (float) (d5 + d25), (float) (d6 + d23), (float) (d7 + d26)).endVertex();
+                    }
                 }
                 tesselator.end();
             }

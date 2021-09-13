@@ -12,7 +12,7 @@
     },
     "min_y": -64,
     "height": 448,
-    "density_factor": 0.8,
+    "density_factor": 0.1,
     "density_offset": -0.46875,
     "size_horizontal": 1,
     "size_vertical": 2,

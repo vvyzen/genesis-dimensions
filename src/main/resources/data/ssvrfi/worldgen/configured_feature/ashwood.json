@@ -21,7 +21,7 @@
           "persistent": "false",
           "distance": "7"
         },
-        "Name": "ssvrfi:ashwood_leaves"
+        "Name": "ssvrfi:everchar_leaves"
       },
       "type": "minecraft:simple_state_provider"
     },
@@ -30,7 +30,7 @@
         "Properties": {
           "stage": "0"
         },
-        "Name": "ssvrfi:ashwood_sapling"
+        "Name": "ssvrfi:everchar_sapling"
       },
       "type": "minecraft:simple_state_provider"
     },
@@ -45,7 +45,7 @@
         "Properties": {
           "axis": "y"
         },
-        "Name": "ssvrfi:ashwood_log"
+        "Name": "ssvrfi:everchar_log"
       },
       "type": "minecraft:simple_state_provider"
     },

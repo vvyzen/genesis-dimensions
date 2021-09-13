@@ -4,12 +4,12 @@ import java.util.Random;
 
 public class GenesisUtils {
 
-    // * BlackbodyRGBGenerator generates color based on blackbody radiation
+    // * BlackbodyRGBGenerator generates color roughly based on blackbody radiation
     //saturation for how much the color is darkened, so just saturation
     //greenExponent affects the cutoff of the green color, so a lower value means a smoother gradient from yellow/cyan to red/blue
     //greenOffset affects the cutoff offset, at 0 there will be barely any pure red/blue stars, recommended value is 0.6
     //temperatureOffset affects star color, turning this up may increase saturation and might break things, highly recommended to leave at 1
-    //the way temperature works is negative values are red, positive are blue, 0 is white
+    //the way temperature works is negative values are red, positive are blue, 0 is white, values near 0 have high green, making cyan/yellow possible w/ greenExponent
     public static float[] BlackbodyRGBGenerator(Random rand, float temperatureOffset, float saturation, float greenExponent, float greenOffset){
         float[] colors;
         colors = new float[3];

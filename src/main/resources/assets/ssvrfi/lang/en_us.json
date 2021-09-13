@@ -81,10 +81,11 @@
   "block.ssvrfi.azurite": "Azurite",
 
   "block.ssvrfi.clover": "Clover",
+  "block.ssvrfi.caproot": "Caproot",
 
-  "block.ssvrfi.ashwood_log": "Ashwood Log",
-  "block.ssvrfi.ashwood_leaves": "Ashwood Leaves",
-  "block.ssvrfi.ashwood_sapling": "Ashwood Sapling",
+  "block.ssvrfi.everchar_log": "Everchar Log",
+  "block.ssvrfi.everchar_leaves": "Everchar Leaves",
+  "block.ssvrfi.everchar_sapling": "Everchar Sapling",
   "block.ssvrfi.dead_log": "Dead Log",
   "block.ssvrfi.dead_leaves": "Dead Leaves",
   "block.ssvrfi.dead_sapling": "Dead Sapling",
