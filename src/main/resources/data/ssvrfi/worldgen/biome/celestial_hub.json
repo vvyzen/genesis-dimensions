@@ -7,6 +7,12 @@
   "downfall": 0.0,
   "category": "none",
   "effects": {
+    "music": {
+      "sound": "ssvrfi:music.planetarium",
+      "min_delay": 20,
+      "max_delay": 12000,
+      "replace_current_music": true
+    },
     "sky_color": 721175,
     "fog_color": 5385849,
     "grass_color": 3684408,

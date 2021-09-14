@@ -18,5 +18,13 @@
         "stream": true
       }
     ]
+  },
+  "music.planetarium": {
+    "sounds": [
+      {
+        "name": "ssvrfi:music/planetarium",
+        "stream": true
+      }
+    ]
   }
 }
