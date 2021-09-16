@@ -2,6 +2,7 @@
     "parent": "minecraft:block/block",
     "ambientocclusion": false,
     "textures": {
+		"particle": "ssvrfi:block/clover/clover_stem",
         "flower": "ssvrfi:block/clover/clover_flower",
         "stem": "ssvrfi:block/clover/clover_stem"
     },

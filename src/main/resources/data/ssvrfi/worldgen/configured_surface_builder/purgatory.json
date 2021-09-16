@@ -1,0 +1,14 @@
+{
+  "config": {
+    "top_material": {
+      "Name": "minecraft:crafting_table"
+    },
+    "under_material": {
+      "Name": "minecraft:crafting_table"
+    },
+    "underwater_material": {
+      "Name": "minecraft:crafting_table"
+    }
+  },
+  "type": "minecraft:default"
+}
