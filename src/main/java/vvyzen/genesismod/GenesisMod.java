@@ -22,6 +22,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
@@ -29,6 +30,7 @@ import net.minecraftforge.fmlserverevents.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import vvyzen.genesismod.client.KeyMappings;
 import vvyzen.genesismod.client.renderer.*;
 import vvyzen.genesismod.init.BlockRegistry;
 import vvyzen.genesismod.init.ItemRegistry;
@@ -50,6 +52,8 @@ public class GenesisMod
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setupClient);
+
 
         ItemRegistry.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         BlockRegistry.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -134,6 +138,14 @@ public class GenesisMod
 
         }
     }
+
+    @SubscribeEvent
+    public void setupClient(FMLClientSetupEvent event){
+        KeyMappings.mapKeys();
+    }
+
+
+
     private static void setRenderLayer(Block block, RenderType type){
         Objects.requireNonNull(type);
         ItemBlockRenderTypes.setRenderLayer(block, type::equals);

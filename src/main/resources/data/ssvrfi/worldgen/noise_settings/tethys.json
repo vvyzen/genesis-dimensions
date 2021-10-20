@@ -22,12 +22,12 @@
       "xz_scale": 0.9999999814507745,
       "y_scale": 0.9999999814507745,
       "xz_factor": 80,
-      "y_factor": 150
+      "y_factor": 180
     }
   },
   "bedrock_roof_position": -2147483648,
   "bedrock_floor_position": 0,
-  "sea_level": 71,
+  "sea_level": 75,
   "min_surface_level": 0,
   "noise_caves_enabled": true,
   "noodle_caves_enabled": true,

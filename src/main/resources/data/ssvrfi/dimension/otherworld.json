@@ -42,6 +42,46 @@
           },
           "biome": "ssvrfi:desolate_fields"
         },
+		{
+          "parameters": {
+            "altitude": 0.1,
+            "weirdness": 0.0,
+            "offset": 0.0,
+            "temperature": -0.8,
+            "humidity": 0.1
+          },
+          "biome": "ssvrfi:frozen_fields"
+        },
+		{
+          "parameters": {
+            "altitude": 0.6,
+            "weirdness": 0.0,
+            "offset": 0.0,
+            "temperature": -0.1,
+            "humidity": 0.1
+          },
+          "biome": "ssvrfi:empty_hills"
+        },
+		{
+          "parameters": {
+            "altitude": 0.6,
+            "weirdness": 0.0,
+            "offset": 0.0,
+            "temperature": -0.8,
+            "humidity": 0.1
+          },
+          "biome": "ssvrfi:frozen_hills"
+        },
+		{
+          "parameters": {
+            "altitude": 0.8,
+            "weirdness": 0.0,
+            "offset": 0.0,
+            "temperature": -1.0,
+            "humidity": -0.4
+          },
+          "biome": "ssvrfi:arctic_ridge"
+        },
 		        {
           "parameters": {
             "altitude": 0.6,

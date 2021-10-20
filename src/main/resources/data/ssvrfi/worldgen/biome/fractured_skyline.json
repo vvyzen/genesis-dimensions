@@ -1,6 +1,6 @@
 {
-  "depth": 4.0,
-  "scale": 0.5,
+  "depth": -1.0,
+  "scale": 1.5,
   "precipitation": "none",
   "temperature_modifier": "none",
   "temperature": -0.6,

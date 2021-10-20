@@ -21,7 +21,7 @@ import vvyzen.genesismod.world.level.grower.EternalTreeGrower;
 public class BlockRegistry {
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, GenesisMod.MODID);
 
-    //public static final RegistryObject<LiquidBlockFixed> BLOOD = BLOCKS.register("blood", () -> new LiquidBlockFixed(FluidRegistry.BLOOD_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER, MaterialColor.COLOR_RED).noCollission().strength(100.0F).noDrops()));
+    //public static final RegistryObject<LiquidBlock> BLOOD = BLOCKS.register("blood", () -> new LiquidBlock(FluidRegistry.BLOOD_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER, MaterialColor.COLOR_RED).noCollission().strength(100.0F).noDrops()));
 
     public static final RegistryObject<Block> MOONSTONE = BLOCKS.register("moonstone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SCORIA = BLOCKS.register("scoria", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(3.0F, 6.0F).requiresCorrectToolForDrops()));

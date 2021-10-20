@@ -5,3 +5,5 @@
 -polish skystone
 -clean up environmental textures
 -crazy space textures for sky renderer
+-actual railgun textures for carbon and abyssal railgun
+-block textures for high-powered furnace, smelterizer, infusion station, arcane enchanter, bleeding willow logs, better abyssalite ore texture

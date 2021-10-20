@@ -51,6 +51,12 @@
   "item.ssvrfi.abyssalite_axe": "Abyssalite Axe",
   "item.ssvrfi.abyssalite_hoe": "Abyssalite Hoe",
 
+  "item.ssvrfi.jasper_sword": "Abyssal Jasper Sword",
+  "item.ssvrfi.jasper_pickaxe": "Abyssal Jasper Pickaxe",
+  "item.ssvrfi.jasper_shovel": "Abyssal Jasper Shovel",
+  "item.ssvrfi.jasper_axe": "Abyssal Jasper Axe",
+  "item.ssvrfi.jasper_hoe": "Abyssal Jasper Hoe",
+
   "item.ssvrfi.empty_sigil": "Empty Abyssalite Sigil",
   "item.ssvrfi.protection_sigil": "Abyssal Protection Sigil",
   "item.ssvrfi.speed_sigil": "Abyssal Speed Sigil",
@@ -98,6 +104,11 @@
   "block.ssvrfi.black_diamond_ore": "Black Diamond Ore",
   "block.ssvrfi.abyssalite_ore": "Abyssalite Ore",
 
+  "key.ssvrfi.open.purify": "Open Purification Menu",
+  "key.ssvrfi.ability.main": "Primary Ability 1",
+  "key.ssvrfi.ability.mainalt": "Primary Ability 2",
+  "key.ssvrfi.ability.side": "Secondary Ability 1",
+  "key.ssvrfi.ability.sidealt": "Secondary Ability 2",
 
 
   "itemGroup.underworld": "§9GENESIS"

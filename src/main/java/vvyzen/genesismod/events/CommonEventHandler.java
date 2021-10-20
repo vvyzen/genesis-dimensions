@@ -5,6 +5,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.client.event.GuiScreenEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,6 +16,22 @@ import vvyzen.genesismod.init.TagRegistry;
 
 @Mod.EventBusSubscriber(modid = GenesisMod.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEventHandler {
+
+
+    /*@SubscribeEvent
+    public static void angelabilities(LivingEvent.LivingUpdateEvent angelevent){
+        LivingEntity player = angelevent.getEntityLiving();
+        if(player instanceof Player){
+
+        }
+    }*/
+
+
+
+
+
+
+
 
     @SubscribeEvent
     public static void shattererswap(PlayerInteractEvent.RightClickItem shatteruse) {
@@ -81,4 +98,9 @@ public class CommonEventHandler {
             }
         }
     }
+
+
+
+
+
 }

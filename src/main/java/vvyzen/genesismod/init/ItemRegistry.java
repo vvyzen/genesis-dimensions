@@ -27,6 +27,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> IRIDIUM_INGOT = ITEMS.register("iridium_ingot", () -> new Item(new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
     public static final RegistryObject<Item> BLACK_DIAMOND = ITEMS.register("black_diamond", () -> new Item(new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
     public static final RegistryObject<Item> ABYSSALITE = ITEMS.register("abyssalite", () -> new Item(new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
+    public static final RegistryObject<Item> JASPER = ITEMS.register("jasper", () -> new Item(new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
 
     public static final RegistryObject<Item> RAW_PYRITE = ITEMS.register("raw_pyrite", () -> new Item(new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
     public static final RegistryObject<Item> RAW_IRIDIUM = ITEMS.register("raw_iridium", () -> new Item(new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
@@ -70,6 +71,12 @@ public class ItemRegistry {
     public static final RegistryObject<ShovelItem> ABYSSALITE_SHOVEL = ITEMS.register("abyssalite_shovel",() -> new ShovelItem(new AbyssaliteToolTier(),1.5F, -3.0F, new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
     public static final RegistryObject<AxeItem> ABYSSALITE_AXE = ITEMS.register("abyssalite_axe",() -> new AxeItem(new AbyssaliteToolTier(),5.0F, -3.0F, new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
     public static final RegistryObject<HoeItem> ABYSSALITE_HOE = ITEMS.register("abyssalite_hoe",() -> new HoeItem(new AbyssaliteToolTier(),-4, 0.0F, new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
+
+    public static final RegistryObject<SwordItem> JASPER_SWORD = ITEMS.register("jasper_sword",() -> new SwordItem(new JasperToolTier(),3, -2.4F, new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
+    public static final RegistryObject<PickaxeItem> JASPER_PICKAXE = ITEMS.register("jasper_pickaxe", () -> new PickaxeItem(new JasperToolTier(),1, -2.8F,new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
+    public static final RegistryObject<ShovelItem> JASPER_SHOVEL = ITEMS.register("jasper_shovel",() -> new ShovelItem(new JasperToolTier(),1.5F, -3.0F, new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
+    public static final RegistryObject<AxeItem> JASPER_AXE = ITEMS.register("jasper_axe",() -> new AxeItem(new JasperToolTier(),5.0F, -3.0F, new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
+    public static final RegistryObject<HoeItem> JASPER_HOE = ITEMS.register("jasper_hoe",() -> new HoeItem(new JasperToolTier(),-4, 0.0F, new Item.Properties().tab(CreativeGroupUnderworld.INSTANCE)));
 
     //SIGILS
 
