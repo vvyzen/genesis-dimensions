@@ -1,9 +1,9 @@
 package vvyzen.genesismod.init;
 
 import net.minecraft.world.item.*;
-import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import vvyzen.genesismod.GenesisMod;
 import vvyzen.genesismod.item.EmptySigil;
 import vvyzen.genesismod.item.IvoryApple;
