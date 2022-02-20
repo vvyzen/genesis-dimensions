@@ -1,4 +1,6 @@
 package vvyzen.genesismod.init;
 
-public class EnchantmentRegistry {
+
+public class DimensionRegistry {
+
 }

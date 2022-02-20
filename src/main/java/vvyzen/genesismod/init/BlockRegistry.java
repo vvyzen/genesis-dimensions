@@ -8,9 +8,10 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.fmllegacy.RegistryObject;
+import net.minecraftforge.fluids.capability.wrappers.FluidBlockWrapper;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import vvyzen.genesismod.GenesisMod;
 import vvyzen.genesismod.blocks.RedundantGrassBlock;
 import vvyzen.genesismod.world.level.grower.AshTreeGrower;
@@ -21,7 +22,6 @@ import vvyzen.genesismod.world.level.grower.EternalTreeGrower;
 public class BlockRegistry {
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, GenesisMod.MODID);
 
-    //public static final RegistryObject<LiquidBlock> BLOOD = BLOCKS.register("blood", () -> new LiquidBlock(FluidRegistry.BLOOD_SOURCE.get(), BlockBehaviour.Properties.of(Material.WATER, MaterialColor.COLOR_RED).noCollission().strength(100.0F).noDrops()));
 
     public static final RegistryObject<Block> MOONSTONE = BLOCKS.register("moonstone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(1.5F, 6.0F).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> SCORIA = BLOCKS.register("scoria", () -> new Block(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(3.0F, 6.0F).requiresCorrectToolForDrops()));
@@ -58,5 +58,7 @@ public class BlockRegistry {
     public static final RegistryObject<OreBlock> IRIDIUM_ORE = BLOCKS.register("iridium_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F)));
     public static final RegistryObject<OreBlock> BLACK_DIAMOND_ORE = BLOCKS.register("black_diamond_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(4.0F, 3.0F), UniformInt.of(3, 7)));
     public static final RegistryObject<OreBlock> ABYSSALITE_ORE = BLOCKS.register("abyssalite_ore", () -> new OreBlock(BlockBehaviour.Properties.of(Material.STONE).requiresCorrectToolForDrops().strength(6.0F, 3.0F), UniformInt.of(3, 7)));
+
+    //public static final RegistryObject<LiquidBlockFixed> BLOOD = BLOCKS.register("blood", () -> new LiquidBlockFixed(FluidRegistry.BLOOD_SOURCE, BlockBehaviour.Properties.of(Material.WATER, MaterialColor.COLOR_RED).noCollission().strength(100.0F).noDrops()));
 
 }

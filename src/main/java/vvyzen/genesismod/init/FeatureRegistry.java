@@ -3,6 +3,7 @@ package vvyzen.genesismod.init;
 import net.minecraft.core.Registry;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -11,9 +12,11 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import vvyzen.genesismod.util.SSPPublic;
 import vvyzen.genesismod.world.level.feature.trunkplacers.EternalTrunkPlacer;
 
 import java.util.OptionalInt;
@@ -33,28 +36,25 @@ public class FeatureRegistry {
 
         ASHWOOD = register("ashwood", Feature.TREE.configured((
                 new TreeConfiguration.TreeConfigurationBuilder(
-                        new SimpleStateProvider(BlockRegistry.EVERCHAR_LOG.get().defaultBlockState()),
+                        BlockStateProvider.simple(BlockRegistry.EVERCHAR_LOG.get()),
                         new StraightTrunkPlacer(4, 3, 0),
-                        new SimpleStateProvider(BlockRegistry.EVERCHAR_LEAVES.get().defaultBlockState()),
-                        new SimpleStateProvider(BlockRegistry.EVERCHAR_SAPLING.get().defaultBlockState()),
+                        BlockStateProvider.simple(BlockRegistry.EVERCHAR_LEAVES.get()),
                         new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                         new TwoLayersFeatureSize(1, 0, 1))).ignoreVines().build()));
 
         DEAD_TREE = register("dead_tree", Feature.TREE.configured((
                 new TreeConfiguration.TreeConfigurationBuilder(
-                        new SimpleStateProvider(BlockRegistry.DEAD_LOG.get().defaultBlockState()),
+                        BlockStateProvider.simple(BlockRegistry.DEAD_LOG.get()),
                         new FancyTrunkPlacer(3, 11, 0),
-                        new SimpleStateProvider(BlockRegistry.DEAD_LEAVES.get().defaultBlockState()),
-                        new SimpleStateProvider(BlockRegistry.DEAD_SAPLING.get().defaultBlockState()),
+                        BlockStateProvider.simple(BlockRegistry.DEAD_LEAVES.get()),
                         new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 25),
                         new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).build())));
 
         ETERNAL_TREE = register("eternal_tree", Feature.TREE.configured((
                 new TreeConfiguration.TreeConfigurationBuilder(
-                        new SimpleStateProvider(BlockRegistry.ETERNAL_LOG.get().defaultBlockState()),
+                        BlockStateProvider.simple(BlockRegistry.ETERNAL_LOG.get()),
                         new EternalTrunkPlacer(12, 16, 0),
-                        new SimpleStateProvider(BlockRegistry.ETERNAL_LEAVES.get().defaultBlockState()),
-                        new SimpleStateProvider(BlockRegistry.ETERNAL_SAPLING.get().defaultBlockState()),
+                        BlockStateProvider.simple(BlockRegistry.ETERNAL_LEAVES.get()),
                         new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4),
                         new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))).build())));
 
